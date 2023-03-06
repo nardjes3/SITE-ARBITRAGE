@@ -10,15 +10,11 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('sec_commissions', function (Blueprint $table) {
+    { 
+        Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('adresse');
-            $table->integer('num_tel');
-            $table->string('login');
-            $table->string('mtps');
+            $table->string('niveau');
+            $table->string('type');
             $table->timestamps();
         });
     }
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sec_commissions');
+        Schema::dropIfExists('questions');
     }
 };

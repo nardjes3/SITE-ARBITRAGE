@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sec_commissions', function (Blueprint $table) {
+        Schema::create('programmes', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('adresse');
-            $table->integer('num_tel');
-            $table->string('login');
-            $table->string('mtps');
+            $table->string('titre');
+            $table->mediumText('contenue');
+            $table->unsignedBigInteger('ins_ph_id');
+            $table->foreign('ins_ph_id')->references('id')->on('instructeur_phies');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sec_commissions');
+        Schema::dropIfExists('programmes');
     }
 };

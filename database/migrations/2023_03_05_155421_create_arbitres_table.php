@@ -11,14 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sec_commissions', function (Blueprint $table) {
+        Schema::create('arbitres', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
             $table->string('prenom');
             $table->string('adresse');
             $table->integer('num_tel');
+            $table->integer('niveau');
+            $table->string('categorie');
+            $table->string('etat');
             $table->string('login');
             $table->string('mtps');
+            $table->boolean('paye');
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sec_commissions');
+        Schema::dropIfExists('arbitres');
     }
 };
