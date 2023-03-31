@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('faits', function (Blueprint $table) {
             $table->unsignedBigInteger('arbitre_id');
             $table->foreign('arbitre_id')->references('id')->on('arbitres');
-
+            
             $table->unsignedBigInteger('test_phy_id');
             $table->foreign('test_phy_id')->references('id')->on('test_physiques');
 
