@@ -13,10 +13,16 @@ return new class extends Migration
     {
         Schema::create('sec_commissions', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('adresse');
+            $table->string('name');
+            $table->string('lastName');
+            $table->string('email');
             $table->integer('num_tel');
+            $table->string('Birthday');
+            $table->string('Gender');
+            $table->string('Country');
+            $table->string('typeSport');
+            $table->string('role');
+            $table->string('level');
             $table->string('login');
             $table->string('mtps');
             $table->timestamps();

@@ -17,6 +17,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Admin', function () {
-    return view('Admin/dashboard');
+Route::get('/dash', function () {
+    return view('Admin/dash');
 });
+
+
+
+Route::get('/payee', function () {
+    return view('Admin/payee');
+});
+
+Route::get('/list', function () {
+    return view('Admin/list_ar');
+});
+
+Route::get('/instructor', function () {
+    return view('Admin/instructor');
+});
+Route::get('/analytics', function () {
+    return view('Admin/analytic');
+});
+Route::get('/repport', function () {
+    return view('Admin/report');
+});
+Route::get('/profilAdmin','App\Http\Controllers\sec@affSec');
+Route::post('update','App\Http\Controllers\sec@update');
+
+

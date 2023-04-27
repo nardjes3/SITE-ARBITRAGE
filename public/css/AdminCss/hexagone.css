@@ -5,52 +5,44 @@
   margin: 0;
   padding: 0;
 } */
-.back-vid{
-    position: absolute;
-    right: 0;
-    left:0;
-    top:0;
-    min-width: 100%;
-    bottom: 0;
-    z-index:-1;
-   }
+
 div.hexag 
 {
   font-family: 'Poppins', sans-serif;
-  margin-left:600px;
-  /* margin-right:100px; */
-  margin-top:60px;
-  margin-bottom:0px;
-  height:0px;
+margin-right: 700px;
+margin-left: -100px;
+margin-top: -750px;
+  
+  height:5px;
 }
 .honeycomb
 {
   display: -webkit-box;
-  display: flex;
+ 
   flex-wrap: wrap;
   list-style: none;
   -webkit-box-pack: center;
   justify-content: center;
   /* -webkit-box-align: center; */
   align-items: center;
-  max-width: 1200px;
+  max-width: 400px;
   margin: 0 auto;
   padding: 0;
-  transform: translateY(80px);
+  transform: translateY(120px);
 }
 
 .honeycomb-cell
 {
   -webkit-box-flex: 0;
-  flex: 0 1 150px;
-  max-width: 180px;
+  flex: 0 1 170px;
+  width: 250px;
   height: 100px;
-  margin: 63.4px 10.5px 5px;
+  margin: 64.4px 10.5px 5px;
   position: relative;
   padding: 0.5em;
   text-align: center;
   z-index: 1;
-  box-shadow: 0px 0px 15px 0 rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 35px 0 rgba(0,0,0,0.1);
 }
 .honeycomb-cell_img
 {
@@ -202,30 +194,4 @@ div.hexag
     display: block;
   }
 }
-
-div.anim{
-    width:900px;
-    height:50px;
-}
-svg text{
-    font-family:arial;
-    font-size: 20px;
-    /* stroke: #0ed1c1; */
-    font-size:80px;
-    font-weight:700;
-    stroke-width:5;
-    animation:textAnimate 5s infinite alternate ;
-}
-
-@keyframes textAnimate{
-    0%{
-        stroke-dasharray: 0 50%;
-    }
-    100%{
-        stroke-dasharray: 50% 0;
-    }
-}
-
-
-
 

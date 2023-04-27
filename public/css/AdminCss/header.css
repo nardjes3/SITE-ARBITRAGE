@@ -1,0 +1,718 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Trade+Winds&display=swap');
+:root{
+  --secondary:#227c70;
+}
+*{
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
+
+.mail{
+    margin-right: 25px;
+}
+
+.wrapper{
+  width: 100%;
+}
+
+.navbar{
+    background: transparent;
+  width: 94.35%;
+  height: 50px;
+  margin-left: 75px;
+  padding: 0 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.navbar .navbar_left .logo a{
+   font-family: 'Trade Winds';
+   font-size: 20px;
+}
+
+.navbar .navbar_right{
+   display: flex;
+}
+
+.navbar .navbar_right img{
+  width: 40px;
+}
+
+.navbar .navbar_right img{
+  cursor: pointer;
+}
+
+.noti{
+  margin-right: 25px;
+ 
+}
+
+
+.navbar .navbar_right .profile{
+  position: relative;
+}
+
+
+.navbar .profile .profile_dd{
+  position: absolute;
+  top: 48px;
+  right: -15px;
+  user-select: none;
+  background: #fff;
+  border: 1px solid #c7d8e2;
+  width: 350px;
+  height: auto;
+  display: none;
+  border-radius: 3px;
+  box-shadow: 10px 10px 35px rgba(0,0,0,0.125),
+              -10px -10px 35px rgba(0,0,0,0.125);
+}
+
+.navbar .profile .profile_dd:before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 15px;
+    border: 10px solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+
+
+.navbar .navbar_right .profile .icon_wrap{
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--secondary);
+  border-radius: 50px;
+  cursor: pointer;
+  width: 170px;
+  background-color: white;
+}
+
+.navbar .navbar_right .profile .name{
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.navbar .navbar_right .icon_wrap:hover,
+.navbar .navbar_right .profile.active .icon_wrap{
+  color: #3b80f9;
+}
+ 
+.navbar .profile .profile_dd{
+  width: 225px;
+}
+.navbar .profile .profile_dd:before{
+  rigth: 10px;
+}
+
+.navbar .profile .profile_dd ul li {
+    border-bottom: 1px solid #f1f2f4;
+}
+
+.navbar .profile .profile_dd ul li  a{
+    display: block;
+    padding: 15px 35px;
+    position: relative;
+}
+
+.navbar .profile .profile_dd ul li  a .picon{
+  display: inline-block;
+  width: 30px;
+}
+
+.navbar .profile .profile_dd ul li  a:hover{
+  color: #3b80f9;
+  background: #f0f5ff;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.navbar .profile .profile_dd ul li.profile_li a:hover {
+    background: transparent;
+    cursor: default;
+    color: #7f8db0;
+}
+
+.navbar .profile .profile_dd ul li .btn{
+    height: 32px;
+    padding: 7px 10px;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    background: #3b80f9;
+    width: 125px;
+    margin: 5px auto 15px;
+}
+
+.navbar .profile .profile_dd ul li .btn:hover{
+  background: #6593e4;
+}
+
+.navbar .profile.active .profile_dd{
+  display: block;
+}
+
+
+ .menu{
+    background-color:#FFF;
+    box-sizing:0 5px 25px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: 10px 20px;
+    position: absolute;
+    right: -10px;
+    width: 200px;
+    transition: 0.5s;
+    top: 120px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100000;
+}
+ .menu.active{
+    opacity: 1;
+    top: 60px;
+    visibility: visible;
+}
+ .menu::before{
+    background-color:#fff;
+    content: '';
+    height: 20px;
+    position: absolute;
+    right: 30px;
+    transform:rotate(45deg);
+    top:-5px;
+    width: 20px;
+}
+ .menu h3{
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1em;
+    padding: 20px 0px;
+    text-align: left;
+    width: 100%;
+}
+ .menu h3 div{
+    color: hsl(0, 0%, 51%);
+    font-size: 14px;
+    font-weight: 300;
+    height: 15px;
+}
+ .menu ul li{
+    align-items: center;
+    border-top:1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: left;
+    list-style: none;
+    padding: 10px 0px;
+    height: 15px;
+}
+ .menu ul li img{
+    max-width: 20px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition:0.5s
+}
+ .menu ul li a{
+    display: inline-block;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+ .menu ul li:hover img{
+    opacity: 1;
+}
+ .menu ul li:hover a{
+    color:#ff00ff;
+}
+
+.nr_li{
+	margin-left: 25px;
+    margin-top: 20px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 20px;
+	position: relative;
+}
+
+.nr_li:hover {
+    color: #cefffc;
+}
+
+
+.dd_menu {
+    position: absolute;
+    right: -25px;
+    top: 47px;
+    display: flex;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+    display: none;
+}
+
+.dd_menu .dd_left{
+	background: #74ded8;
+	padding: 15px 20px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.dd_menu .dd_left li{
+	color: #fff;
+}
+
+.dd_menu .dd_right{
+	padding: 15px 20px;
+}
+
+.dd_menu li{
+	margin-bottom: 10px;
+	color: #868686;
+}
+
+.dd_menu:before{
+	content: "";
+	position: absolute;
+	top: -20px;
+	right: 30px;
+	border: 10px solid;
+	border-color: transparent transparent #fff transparent;
+}
+
+.dd_main.active .dd_menu{
+	display: flex;}
+
+    .menu2{
+      background: linear-gradient(45deg, #eb4949, rgb(248, 248, 75));
+      backdrop-filter: blur(500px);
+        box-sizing:0 5px 25px rgba(0,0,0,0.1);
+        border-radius: 15px;
+        padding: 10px 20px;
+        position: absolute;
+        right: 150px;
+        width: 250px;
+        transition: 0.5s;
+        top: 120px;
+        visibility: hidden;
+        opacity: 0;
+        
+    }
+     .menu2.active{
+        opacity: 1;
+        top: 80px;
+        visibility: visible;
+    }
+     .menu2::before{
+        background-color: rgb(240, 224, 78);
+        content: '';
+        height: 20px;
+        position: absolute;
+        right: 60px;
+        transform:rotate(45deg);
+        top:-5px;
+        width: 20px;
+    }
+     .menu2 h3{
+        color: #555;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.3em;
+        padding: 20px 0px;
+        text-align: left;
+        width: 100%;
+    }
+     .menu2 h3 div{
+        color: #818181;
+        font-size: 14px;
+        font-weight: 400;
+    }
+     .menu2 ul li{
+        align-items: center;
+        border-top:1px solid rgba(0,0,0,0.05);
+        display: flex;
+        justify-content: left;
+        list-style: none;
+        padding: 10px 0px;
+    }
+     .menu2 ul li img{
+        max-width: 20px;
+        margin-right: 10px;
+        opacity: 0.5;
+        transition:0.5s
+    }
+     .menu2 ul li a{
+        display: inline-block;
+        color: #555;
+        font-size: 14px;
+        font-weight: 600;
+        padding-left: 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.5s;
+    }
+     .menu2 ul li:hover img{
+        opacity: 1;
+    }
+     .menu2 ul li:hover a{
+        color:#ff00ff;
+    }
+
+    .menu2 h2{
+      color: rgb(5, 5, 5);
+      text-align: center;
+      margin-top: 20px;
+  }
+  
+  .menu2 .row{
+      width: 95%;
+      height: 50px;
+      background: linear-gradient(210deg, rgba(41, 41, 31, 0.658) 0, rgba(36, 34, 34, 0.1) 97%);
+     backdrop-filter: blur(30px);
+      border-radius: 5px;
+      margin: 6px auto;
+      padding: 5px;
+      display: flex;
+      transition: 0.3s;
+  }
+  
+  .menu2 .row:hover{
+      background: #fdeaea;
+      transform: scale(1.2);
+  }
+  
+  .menu2.row img{
+      border-radius: 8px;
+      margin-right: 10px;
+      transition: 0.3s;
+  }
+  
+  .menu2 .row:hover img{
+      transform: scale(1.5);
+      box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  }
+  
+  .menu2 .row .tag p{
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: #fff;
+      font-family: "Pump Demi Bold LET";
+      position: relative;
+      left: 10px;
+      transition: 0.5s;
+  }
+  
+  .menu2 .row:hover .tag p{
+      color: #000;
+  }
+  
+  .menu2 .row .tag strong{
+      color: #fff;
+      position: relative;
+      left: 10px;
+      transition: 0.3s;
+  }
+  
+  .menu2 .row:hover .tag strong{
+      color: #000;
+  }
+  div.show_all{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+div.show_all p{
+  font-weight: 600;
+  color: #3b80f9;
+  cursor: pointer;
+}
+
+
+.menu3{
+  background: linear-gradient(45deg, #eb4949, rgb(248, 248, 75));
+  backdrop-filter: blur(500px);
+    box-sizing:0 5px 25px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: 10px 20px;
+    position: absolute;
+    right: 150px;
+    width:250px;
+    transition: 0.5s;
+    top: 120px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10000;
+    
+}
+ .menu3.active{
+    opacity: 1;
+    top: 80px;
+    visibility: visible;
+}
+ .menu3::before{
+    background-color: rgb(240, 224, 78);
+    content: '';
+    height: 20px;
+    position: absolute;
+    right: 60px;
+    transform:rotate(45deg);
+    top:-5px;
+    width: 20px;
+}
+ .menu3 h3{
+    color: #555;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.3em;
+    padding: 20px 0px;
+    text-align: left;
+    width: 100%;
+}
+ .menu3 h3 div{
+    color: #818181;
+    font-size: 14px;
+    font-weight: 400;
+}
+ .menu3 ul li{
+    align-items: center;
+    border-top:1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: left;
+    list-style: none;
+    padding: 10px 0px;
+}
+ .menu3 ul li img{
+    max-width: 24px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition:0.5s
+}
+ .menu3 ul li a{
+    display: inline-block;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+ .menu3 ul li:hover img{
+    opacity: 1;
+}
+ .menu3 ul li:hover a{
+    color:#ff00ff;
+}
+
+
+
+.menu3 h2
+{
+    color: #fff;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-weight: 300;
+    border-bottom: 2px solid #999;
+}
+
+.menu3 ul
+{
+    position: relative;
+}
+
+
+.menu3 ul li
+{
+    position: relative;
+    list-style: none;
+    display: table;
+    margin: 10px 0;
+    padding-left: 34px;
+    padding-right: 5px;
+}
+
+.menu3 ul li::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #03fac9;
+    border-radius: 34px;
+    background: transparent;
+    transition: background 0.5s, width 0.5s;
+    box-sizing: border-box;
+    transition-delay: 0.5s, 0s;
+}
+
+
+.menu3 ul li:hover::before
+{
+    width: 100%;
+    background: #03fac9;
+}
+
+
+.menu3 ul li::after
+{
+    content: '';
+    position: absolute;
+    top: 13px;
+    left: 12px;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+
+.menu3 ul li:hover::after
+{
+    left: 24px;
+    border-color: #f00;
+    transform: rotate(45deg) scale(1.7);
+    transition-delay: 0.5s;
+}
+
+
+
+.menu3 ul li p
+{
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+.menu3 ul li:hover p
+{
+    color: #000;
+    transition-delay: 0.5s;
+}
+
+.menu3 .row{
+  width: 99%;
+  height: 50px;
+  background: linear-gradient(210deg, rgba(41, 41, 31, 0.658) 0, rgba(36, 34, 34, 0.1) 97%);
+ backdrop-filter: blur(30px);
+  border-radius: 5px;
+  margin: 6px auto;
+  padding: 5px;
+  display: flex;
+  transition: 0.3s;
+}
+
+.menu3 .row:hover{
+  background: #fdeaea;
+  transform: scale(1.2);
+}
+
+.menu3.row img{
+  border-radius: 8px;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.menu3 .row:hover img{
+  transform: scale(1.5);
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.menu3 .row .tag p{
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #fff;
+  font-family: "Pump Demi Bold LET";
+  position: relative;
+  left: 5px;
+  transition: 0.5s;
+}
+
+.menu3 .row:hover .tag p{
+  color: #000;
+}
+
+.menu3 .row .tag strong{
+  color: #fff;
+  position: relative;
+  left: 5px;
+  transition: 0.3s;
+}
+
+.menu3 .row:hover .tag strong{
+  color: #000;
+}
+
+.card-content .row{
+  width: 99%;
+  height: 41px;
+  background: linear-gradient(210deg, rgba(41, 41, 31, 0.658) 0, rgba(36, 34, 34, 0.1) 97%);
+ backdrop-filter: blur(30px);
+  border-radius: 50px;
+  margin: 6px auto;
+  padding: 5px;
+  display: flex;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card-content .row:hover{
+  background: #fdeaea;
+  transform: scale(1.2);
+}
+
+.card-content.row img{
+  border-radius: 50px;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.card-content .row:hover img{
+  border-radius: 50px;
+  transform: scale(1.5);
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.card-content .row .tag p{
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #fff;
+  font-family: "Pump Demi Bold LET";
+  position: relative;
+  left: 20px;
+  transition: 0.5s;
+  text-align: center;
+  
+}
+
+.card-content .row:hover .tag p{
+  color: #000;
+}
+
+.card-content .row .tag strong{
+  color: #fff;
+  position: relative;
+  
+  transition: 0.3s;
+}
+
+.card-content .row:hover .tag strong{
+  color: #000;
+}

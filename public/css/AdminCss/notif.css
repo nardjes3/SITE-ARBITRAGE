@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+ 
+
+
+
+
+h2{
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
+}
+.inputbox{
+  position: relative;
+  margin: 30px 0;
+  width: 310px;
+  border-bottom: 2px solid #fff;
+}
+.inputbox label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1em;
+  pointer-events: none;
+  transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label{
+top: -5px;
+}
+.inputbox input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding:0 35px 0 5px;
+  color: #fff;
+}
+.inputbox ion-icon{
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  font-size: 1.2em;
+  top: 20px;
+}
+.forget{
+  margin: -15px 0 15px ;
+  font-size: .9em;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;  
+}
+
+.forget label input{
+  margin-right: 3px;
+  
+}
+.forget label a{
+  color: red;
+  text-decoration: none;
+  font-weight: 700;
+}
+.forget label a:hover{
+  text-decoration: underline;
+}
+/* button{
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background: #1b74e4;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+} */
+.register{
+  font-size: .9em;
+  color: #ffffff8f;
+  text-align: center;
+  margin: 25px 0 10px;
+}
+.register p a{
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+.register p a:hover{
+  text-decoration: underline;
+}
+
+
+
+li.nr_li{
+	margin-left: 25px;
+    margin-top: 20px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 20px;
+	position: relative;
+}
+
+li.nr_li:hover {
+    color: #cefffc;
+}
+
+li img{
+	width: 35px;
+	
+    top: 20pxpx;
+}
+
+.dd_menu {
+    position: absolute;
+    right: -25px;
+    top: 47px;
+    display: flex;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+    display: none;
+}
+
+.dd_menu .dd_left{
+	background: #74ded8;
+	padding: 15px 20px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.dd_menu .dd_left li{
+	color: #fff;
+}
+
+.dd_menu .dd_right{
+	padding: 15px 20px;
+}
+
+.dd_menu li{
+	margin-bottom: 10px;
+	color: #868686;
+}
+
+.dd_menu:before{
+	content: "";
+	position: absolute;
+	top: -20px;
+	right: 30px;
+	border: 10px solid;
+	border-color: transparent transparent #fff transparent;
+}
+
+.dd_main.active .dd_menu{
+	display: flex;}
