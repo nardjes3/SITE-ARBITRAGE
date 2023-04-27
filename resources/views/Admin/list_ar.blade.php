@@ -282,7 +282,7 @@
                                   <label>Email</label>
                                   <input type="text" placeholder="Enter email" required>
                               </div>
-      
+      {{-- nnnn --}}
                               <div class="input-field">
                                   <label>Mobile Number</label>
                                   <input type="number" placeholder="Enter mobile number" required>
