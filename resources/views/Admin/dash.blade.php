@@ -31,11 +31,13 @@
     
 
 </head>
-<body style="background-image:url(images/imagesAdmin/4.jpg); background-repeat:no-repeat; background-attachment:fixed; background-size:100% 100%; ">
- 
+<body>
+
 	
 
-
+  <video autoplay loop muted  class="back-vid">
+    <source src="images/imagesAdmin/2.mp4" type="video/mp4"><source>
+</video>
 
 <div class="sidebar">
   <div class="logo">
@@ -87,7 +89,7 @@
       </li>
 
       <li>
-        <a href="/design">
+        <a href="/calendar">
           <span class="icon"><img src="images/imagesAdmin/calendar.png" style="width:30px; margin-left:30px;" alt=""></span>
           <span class="links_name">Calendar</span>
         </a>
@@ -264,8 +266,8 @@
          </div>
 </div>
 </div>
-<div class="an">
-<div class="anim">
+
+{{-- <div class="anim">
     <svg viewBox="400 300 1350 1000">
         <defs>
             <linearGradient id="gradient" y1="0" y2="1">
@@ -277,7 +279,7 @@
             Algerian referees 2023 
         </text>
     </svg>
-</div>
+</div> --}}
 
 <div class="wrapper2">
     <div class="outer">
@@ -335,7 +337,7 @@
       </div>
     </div>
   </div>
-</div>
+
   
 {{-- <div class="cont">
             <h2 class="chart-heading" >Referee level percentage</h2>

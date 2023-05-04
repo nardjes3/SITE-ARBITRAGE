@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('role');
             $table->string('level');
             $table->string('login');
+            $table->string('photo');
             $table->string('mtps');
             $table->timestamps();
         });

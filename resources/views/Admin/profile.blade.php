@@ -25,7 +25,6 @@
 
 </head>
 <body style="background-image:url(images/imagesAdmin/3.jpg); background-repeat:no-repeat; background-attachment:fixed; background-size:100% 100%; ">
-    
     <div class="sidebar">
         <div class="logo">
           <img src="images/imagesAdmin/logo04.png" alt="logo" id="logo_img" style="width: 60px; height:60px; margin-right:20px">
@@ -249,100 +248,96 @@
         
     </div>
 </div>
+
 <div class="content-body">
-            
+  @foreach ($sec_commissions as $sec_commission)
     <div class='password'>
         <section>
             
 
             <span class="overlay"></span>
-      
             <div class="modal-box">
                 <label for="show" class="close-btn" title="close" ">×</label>
                 <div class="form-box">
                     <div class="form-value">
-                      @foreach ($secs as $sec)
-                        <form action="{{url('update')}}" method="POST" enctype="multipart/form-data">
-                          <input type="hidden" name="_methode" value="PUT">
-                          {{csrf_field()}}
-                            
+                      
+                        <form action="/profilAdmin" method="POST">
+                          @csrf
+                          
+                          <input type="hidden" name="id" value="{{$sec_commission['id']}}" >
+                       
                             <h2>update your info</h2>
                             
                             <div class="inputbox">
                               <ion-icon name="lock-closed-outline"></ion-icon>
-                              <input name="name" id="mail" type="text" value="{{$sec->name}}" required>
+                              <input name="name" type="text" value="{{$sec_commission->name}}" >
                               <label for="">First Name</label>
                           </div>
                             <div class="inputbox">
                               <ion-icon name="lock-closed-outline"></ion-icon>
-                              <input name="lastName" id="confirm_password" type="text" value="{{$sec->lastName}}" required>
+                              <input name="lastName" value="{{$sec_commission->lastName}}">
                               <label for="">Last Name</label>
                           </div>
                             <div class="inputbox">
                                 <ion-icon name="lock-closed-outline"></ion-icon>
-                                <input name="email" id="confirm_password" type="password" value="{{$sec->email}}" required>
+                                <input name="email"  type="text" value="{{$sec_commission->email}}" required>
                                 <label for="">Email</label>
                             </div>
                             <div class="inputbox">
                               <ion-icon name="lock-closed-outline"></ion-icon>
-                              <input name="num_tel" id="confirm_password" type="password" value="{{$sec->num_tel}}" required>
+                              <input name="num_tel"  type="text" value="{{$sec_commission->num_tel}}" required>
                               <label for="">Phone</label>
                           </div>
                           
                           <div class="inputbox">
                             <ion-icon name="lock-closed-outline"></ion-icon>
-                            <input name="Birthday" id="confirm_password" type="password" value="{{$sec->Birthday}}" required>
+                            <input name="Birthday"  type="text" value="{{$sec_commission->Birthday}}" required>
                             <label for="">Birthday</label>
                         </div>
                         <div class="inputbox">
                           <ion-icon name="lock-closed-outline"></ion-icon>
-                          <input name="Gender" id="confirm_password" type="password" value="{{$sec->Gender}}" required>
+                          <input name="Gender"  type="text" value="{{$sec_commission->Gender}}" required>
                           <label for="">Gender</label>
                       </div>
                       <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input name="Country" id="confirm_password" type="password" value="{{$sec->Country}}" required>
+                        <input name="Country"  type="text" value="{{$sec_commission->Country}}" required>
                         <label for="">Country</label>
                     </div>
                     <div class="inputbox">
                       <ion-icon name="lock-closed-outline"></ion-icon>
-                      <input name="typeSport" id="confirm_password" type="password" value="{{$sec->typeSport}}" required>
+                      <input name="typeSport"  type="text" value="{{$sec_commission->typeSport}}" required>
                       <label for="">Sport Type</label>
                   </div>
                   <div class="inputbox">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input name="role" id="confirm_password" type="password" value="{{$sec->role}}" required>
+                    <input name="role"  type="text" value="{{$sec_commission->role}}" required>
                     <label for="">Role</label>
                 </div>
                 <div class="inputbox">
                   <ion-icon name="lock-closed-outline"></ion-icon>
-                  <input name="level" id="confirm_password" type="password" value="{{$sec->level}}" required>
+                  <input name="level"  type="text" value="{{$sec_commission->level}}" required>
                   <label for="">Level</label>
               </div>
-              <div class="inputbox">
-                <ion-icon name="lock-closed-outline"></ion-icon>
-                <input name="newpass" id="confirm_password" type="password" value="{{$sec->newpass}}" required>
-                <label for="">New Password</label>
-            </div>
-            <div class="inputbox">
-              <ion-icon name="lock-closed-outline"></ion-icon>
-              <input name="confirmpass" id="confirm_password" type="password" value="{{$sec->confirmpass}}" required>
-              <label for="">Confirm Password</label>
-          </div>
+              
                             <p id="message"> </p>
                             <br>
                             <input type="submit" value="Submit">
                             
                         </form>
-                        @endforeach
+                       
                     </div>
                 </div>
             </div>
+      
+            
           </section>
           </div>
-          @foreach ($secs as $sec)
+         
+            
+          
     <div class="card">
-        <button class="anim show-modal" value={{$sec->id}}>  update password </button>
+        <button class="anim show-modal" value="{{$sec_commission['id']}}">  update password </button>
                 <button class="anim disconnect">disconnect</button>
        
         <div class="lines"></div>
@@ -357,33 +352,33 @@
         <div class="content">
           <div class="details">
                <h2>JOHN ALEX</h2>
-          <span>email: {{$sec->email}}</span>
+          <span></span>
             <div class='data'>
                 <h3>
                     First Name
                     
-                   <span>{{$sec->name}}</span>
+                   <span>{{$sec_commission['name']}}</span>
                 </h3>
                 <h3>
                     Last Name
                     
-               <span>NARDJES</span>
+               <span>{{$sec_commission['lastName']}}</span>
             </h3>
                 <h3>
                     email
                     
-               <span>nardjes@gmail.com</span>
+               <span>{{$sec_commission['email']}}</span>
             </h3>
                 
                  <h3>
                     phone
                     
-                   <span>0674191973</span> </h3>  
+                   <span>{{$sec_commission['num_tel']}}</span> </h3>  
            
             <h3>
                 Birthday
                 
-           <span>01/03/2003</span>
+           <span>{{$sec_commission['Birthday']}}</span>
         </h3>
 
             
@@ -396,29 +391,29 @@
                 <h3>
                     Gender
                     
-                   <span>Male</span>
+                   <span>{{$sec_commission['Gender']}}</span>
                 </h3>
                
                  <h3>
                     FIFA Country
                     
-                   <span>Algeria (ALG)</span> </h3>
+                   <span>{{$sec_commission['Country']}}</span> </h3>
                       <h3>
                         Sport type
                         
-                   <span>Football</span>
+                   <span>{{$sec_commission['typeSport']}}</span>
                 </h3>
                 
                 <h3>
                     Main Role
                     
-               <span>secretaire de commission</span>
+               <span>{{$sec_commission['role']}}</span>
             </h3>
            
             <h3>
                 Level
                 
-           <span>FIFA</span>
+           <span>{{$sec_commission['level']}}</span>
         </h3>
           
         </div>
@@ -430,9 +425,14 @@
           </div>
        
         </div>
+       
       </div>
+      @endforeach
+     
 </div>
-@endforeach
+
+
+
 <script src="js/AdminJs/profil.js"></script>
     <script src="js/AdminJs/sidebar.js"></script>
     <script src="js/AdminJs/sdBar.js"></script>

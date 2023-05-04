@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body
+{
+  height: 100vh;
+  background-color: #7f53ac;
+  background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+}
+form
+{
+  background-color: white;
+  width: 1000px;
+  padding: 50px 40px;
+  position: relative;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 8px;
+  box-shadow: 20px 20px 30px rgba(0,0,0.5);
+
+}
+.ligne{
+    display:inline-block;
+    padding: 10px;
+    width: 300px;
+}
+label 
+{
+    
+  font-weight: 600;
+  color: #101030;
+}
+input , select
+{
+  
+  width: 100%;
+  margin-top: 5px;
+  padding: 12px;
+  border-radius: 5px;
+  outline: #101010;
+}
+
+
+
+
+.Pass
+{
+  margin-bottom: 30px;
+}
+
+input[type="password"]
+{
+  border: 2px solid #c2c2c2;
+}
+input[type="submit"]
+{
+  background-color: #00FF00;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+input[type="submit"]:hover
+{
+  background-color: lawngreen;
+}
+
+p
+{
+  font-size: 14px;
+  margin: 15px 0;
+  display: inline-block;
+}
+
+.upload{
+    
+  width: 100px;
+  position: relative;
+  margin: auto;
+}
+
+.upload .img{
+    margin-top: -120px;
+  border-radius: 50%;
+  border: 6px solid #eaeaea;
+}
+.upload img{
+  border-radius: 50%;
+  border: 6px solid #eaeaea;
+}
+.upload .round{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #f8f8f8;
+  width: 42px;
+  height: 42px;
+  line-height: 33px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.upload .round input[type = "file"]{
+  position: absolute;
+  transform: scale(2);
+  opacity: 0;
+}
+
+input[type=file]::-webkit-file-upload-button{
+    cursor: pointer;
+}

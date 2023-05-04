@@ -14,21 +14,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 .wrapper2{
-  margin-top:170px;
+  margin-top:230px;
+  margin-left:250px;
 }
 .wrapper2 .outer{
   display: flex;
-  align-items: center;
-  justify-content: center;
+  
 }
 .wrapper2 .card{
-  background: white;
-  width: 600px;
+  background: rgb(14, 82, 146);
+  width: 500px;
   display: flex;
   align-items: center;
   margin-left: 10px;
   padding: 20px;
   opacity: 0;
+  color: #fff;
   pointer-events: none;
   position: absolute;
   justify-content: space-between;

@@ -4,6 +4,19 @@ var pro_pic = document.querySelector('.pro_pic');
 var pro_title = document.querySelector('.pro_title h1');
 var pro_Description = document.querySelector('.pro_description');
 var card2 = document.querySelector('.card_inner');
+var fname = document.querySelector('.fname');
+var lname = document.querySelector('.lname');
+var mail = document.querySelector('.mail');
+var genre = document.querySelector('.gen');
+var role = document.querySelector('.role');
+var pays = document.querySelector('.pays');
+var tsport = document.querySelector('.tsport');
+var etat = document.querySelector('.etat');
+var role2 = document.querySelector('.role2');
+var niv = document.querySelector('.niv');
+var id = document.querySelector('.id');
+
+
 
 
 
@@ -11,8 +24,19 @@ pro_list.forEach(function(pro_listSingle) {
     pro_listSingle.addEventListener('click',function(){
         BgImg = this.style.backgroundImage;
         DataTitle = this.getAttribute("data-title");
-        DataDescription = this.getAttribute("data-description");
-        DataName = this.getAttribute("data-name");
+        Firstname = this.getAttribute("nom");
+        Lastname = this.getAttribute("prenom");
+        Login = this.getAttribute("email");
+        Gender = this.getAttribute("genre");
+        ol = this.getAttribute("role");
+        Country = this.getAttribute("pays");
+        TypeSpot = this.getAttribute("tsport");
+        Statut = this.getAttribute("etat");
+        Ro2 = this.getAttribute("role2");
+        Niveau = this.getAttribute("niv");
+        ID = this.getAttribute("id");
+
+        // DataName = this.getAttribute("data-name");
 
 
         
@@ -20,8 +44,19 @@ pro_list.forEach(function(pro_listSingle) {
         setTimeout(function(){
             pro_pic.style.backgroundImage = BgImg;
             pro_title.innerHTML = DataTitle;
-            pro_Description.innerHTML = DataDescription;
-            pro_name.innerHTML = DataName;
+            
+            fname.innerHTML = Firstname;
+            lname.innerHTML = Lastname;
+            mail.innerHTML = Login;
+            genre.innerHTML = Gender;
+            role.innerHTML = ol;
+            pays.innerHTML = Country;
+            tsport.innerHTML = TypeSpot;
+            etat.innerHTML = Statut;
+            role2.innerHTML = Ro2;
+            niv.innerHTML = Niveau;
+            id.innerHTML = ID;
+
 
         },700);
         setTimeout(function(){

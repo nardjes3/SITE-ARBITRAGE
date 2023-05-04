@@ -8,8 +8,8 @@ use App\Models\sec_commission;
 class sec extends Controller
 {
     public function affSec(){
-        $secs = sec_commission::All();
-        return view('Admin.profile', ['secs'=>$secs]); 
+        $data = sec_commission::all();
+        return view('Admin.profile',['sec_commissions'=>$data]);
     }
 
     public function edit($id){

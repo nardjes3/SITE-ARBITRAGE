@@ -16,10 +16,11 @@
         <link rel="stylesheet" href="css/AdminCss/header.css">
         <link rel="stylesheet" href="css/AdminCss/slide.css">
         <link rel="stylesheet" href="css/AdminCss/popUp.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         
 
-
+        
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
@@ -252,13 +253,165 @@
     </div>
 </div>
 
-        <div class="cards-wrapper" >
-          <div class="add">
+        <div class="cards-wrapper">
+          <div class="update">
             <span class="overlay"></span>
-                <div class="modal-box">
+            
+          <div class="modal-box">
+            <div class="container">
+              <header>update arbiter</header>
+            <form action="list" method="POST">
+              @csrf
+              <div class="form first">
+
+                  <div class="details personal">
+                      <span class="title">Personal Details</span>
+  
+                      <div class="fields">
+                        
+                        <div class="input-field">
+                            <label>First Name</label>
+                            <input name="nom" type="text" placeholder="Enter first name" >
+                        </div>
+                        <div class="input-field">
+                          <label>Last Name</label>
+                          <input name="prenom" type="text" placeholder="Enter last name" >
+                      </div>
+
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input name="login" type="text" placeholder="Enter email" >
+                        </div>
+                        
+                        <div class="input-field">
+                          <label>role</label>
+                          <input name="role" type="text" placeholder="Enter birth date" >
+                      </div>
+                      <div class="input-field">
+                        <label>country</label>
+                        <input name="pays" type="text" placeholder="Enter birth date" >
+                    </div>
+                    <div class="input-field">
+                      <label>Sport type</label>
+                      <input name="typeSport" type="text" placeholder="Enter birth date" >
+                  </div>
+                  <div class="input-field">
+                    <label>role2</label>
+                    <input name="role2" type="text" placeholder="Enter birth date" >
+                </div>
+                <div class="input-field">
+                  <label>statut</label>
+                  <input name="etat" type="text" placeholder="Enter birth date" >
+              </div>
+              <div class="input-field">
+                <label>niv</label>
+                <input name="niv" type="text" placeholder="Enter birth date" >
+            </div>
+            <div class="input-field">
+              <label>mtps</label>
+              <input name="mtps" type="text" placeholder="Enter birth date" >
+          </div>
+          <div class="input-field">
+            <label>paye</label>
+            <input name="paye" type="text" placeholder="Enter birth date" >
+        </div>
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <select name="genre" required>
+                                <option disabled selected>Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+               
+                <div class="details ID">
+                    
+                  <div class="upload">
+                    <img src="images/imagesAdmin/noprofil.jpg" width = 100 height = 100 alt="">
+                    <div class="round">
+                      <input name="image" type="file">
+                      <i class = "fa fa-camera" style = "color: #fff;"></i>
+                    </div>
+                  </div>
+                    <button type="submit" class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+              </div>
+  
+              {{-- <div class="form second">
+                  <div class="details address">
+                      <span class="title">Work Details</span>
+  
+                      <div class="fields">
+                        <div class="input-field">
+                            <label>Assigned Role</label>
+                            <input type="text" placeholder="Permanent or Temporary" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Fifa Country</label>
+                            <input type="text" placeholder="Enter nationality" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Sport Type</label>
+                            <input type="text" placeholder="Enter your state" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Other Role</label>
+                            <input type="text" placeholder="Enter your district" required>
+                        </div>
+
+                        <div class="input-field">
+                          <label>Fifa ID</label>
+                          <input type="number" placeholder="Enter ID number" required>
+                      </div>
+
+                      <div class="input-field">
+                        <label>Level</label>
+                        <select required>
+                            <option disabled selected>Select gender</option>
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advenced</option>
+                        </select>
+                      </div>
+                      </div>
+                          
+                  </div>
+  
+                  <div class="details family">
+                      
+  
+                      <div class="buttons">
+                          <div class="backBtn">
+                              <i class="uil uil-navigator"></i>
+                              <span class="btnText">Back</span>
+                          </div>
+                          
+                          <button type="submit" class="sumbit">
+                              <span class="btnText">Submit</span>
+                              <i class="uil uil-navigator"></i>
+                          </button>
+                      </div>
+                  </div> 
+              </div> --}}
+          </form>
+        </div>
+          </div>
+                {{-- <div class="modal-box">
                   <div class="container">
                     <header>Add new arbiter</header>
-                  <form action="#">
+                  <form action="add" method="POST">
+                    @csrf
                     <div class="form first">
                         <div class="details personal">
                             <span class="title">Personal Details</span>
@@ -266,31 +419,55 @@
                             <div class="fields">
                               <div class="input-field">
                                   <label>First Name</label>
-                                  <input type="text" placeholder="Enter first name" required>
+                                  <input name="nom" type="text" placeholder="Enter first name" >
                               </div>
                               <div class="input-field">
                                 <label>Last Name</label>
-                                <input type="text" placeholder="Enter last name" required>
+                                <input name="prenom" type="text" placeholder="Enter last name" >
                             </div>
       
-                              <div class="input-field">
-                                  <label>Date of Birth</label>
-                                  <input type="date" placeholder="Enter birth date" required>
-                              </div>
       
                               <div class="input-field">
                                   <label>Email</label>
-                                  <input type="text" placeholder="Enter email" required>
+                                  <input name="login" type="text" placeholder="Enter email" >
                               </div>
-      {{-- nnnn --}}
+                              
                               <div class="input-field">
-                                  <label>Mobile Number</label>
-                                  <input type="number" placeholder="Enter mobile number" required>
-                              </div>
+                                <label>role</label>
+                                <input name="role" type="text" placeholder="Enter birth date" >
+                            </div>
+                            <div class="input-field">
+                              <label>country</label>
+                              <input name="pays" type="text" placeholder="Enter birth date" >
+                          </div>
+                          <div class="input-field">
+                            <label>Sport type</label>
+                            <input name="typeSport" type="text" placeholder="Enter birth date" >
+                        </div>
+                        <div class="input-field">
+                          <label>role2</label>
+                          <input name="role2" type="text" placeholder="Enter birth date" >
+                      </div>
+                      <div class="input-field">
+                        <label>statut</label>
+                        <input name="etat" type="text" placeholder="Enter birth date" >
+                    </div>
+                    <div class="input-field">
+                      <label>niv</label>
+                      <input name="niv" type="text" placeholder="Enter birth date" >
+                  </div>
+                  <div class="input-field">
+                    <label>mtps</label>
+                    <input name="mtps" type="text" placeholder="Enter birth date" >
+                </div>
+                <div class="input-field">
+                  <label>paye</label>
+                  <input name="paye" type="text" placeholder="Enter birth date" >
+              </div>
       
                               <div class="input-field">
                                   <label>Gender</label>
-                                  <select required>
+                                  <select name="genre" required>
                                       <option disabled selected>Select gender</option>
                                       <option>Male</option>
                                       <option>Female</option>
@@ -299,18 +476,18 @@
       
                           </div>
                       </div>
-      
+                     
                       <div class="details ID">
                           
       
-                          <button class="nextBtn">
+                          <button type="submit" class="nextBtn">
                               <span class="btnText">Next</span>
                               <i class="uil uil-navigator"></i>
                           </button>
                       </div>
                     </div>
         
-                    <div class="form second">
+                    {{-- <div class="form second">
                         <div class="details address">
                             <span class="title">Work Details</span>
         
@@ -362,41 +539,340 @@
                                     <span class="btnText">Back</span>
                                 </div>
                                 
-                                <button class="sumbit">
+                                <button type="submit" class="sumbit">
                                     <span class="btnText">Submit</span>
                                     <i class="uil uil-navigator"></i>
                                 </button>
                             </div>
                         </div> 
-                    </div>
-                </form>
+                    </div> --}}
+                {{-- </form>
               </div>
+                </div>  --}}
+              </div>
+          <div class="add">
+            <span class="overlay"></span>
+            
+          <div class="modal-box">
+            <div class="container">
+              <header>Add new arbiter</header>
+            <form action="list" method="POST">
+              @csrf
+             
+              <div class="form first">
+                  <div class="details personal">
+                      <span class="title">Personal Details</span>
+                      <div class="upload">
+                        <img src="" width = 100 height = 100 alt="">
+                        <div class="round">
+                          <input name="image" type="file">
+                          <i class = "fa fa-camera" style = "color: #fff;"></i>
+                        </div>
+                      </div>
+                      <div class="fields">
+                        <div class="input-field">
+                            <label>First Name</label>
+                            <input name="nom" type="text" placeholder="Enter first name" >
+                        </div>
+                        <div class="input-field">
+                          <label>Last Name</label>
+                          <input name="prenom" type="text" placeholder="Enter last name" >
+                      </div>
+
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input name="login" type="text" placeholder="Enter email" >
+                        </div>
+                        
+                        <div class="input-field">
+                          <label>role</label>
+                          <input name="role" type="text" placeholder="Enter birth date" >
+                      </div>
+                      <div class="input-field">
+                        <label>country</label>
+                        <input name="pays" type="text" placeholder="Enter birth date" >
+                    </div>
+                    <div class="input-field">
+                      <label>Sport type</label>
+                      <input name="typeSport" type="text" placeholder="Enter birth date" >
+                  </div>
+                  <div class="input-field">
+                    <label>role2</label>
+                    <input name="role2" type="text" placeholder="Enter birth date" >
+                </div>
+                <div class="input-field">
+                  <label>statut</label>
+                  <input name="etat" type="text" placeholder="Enter birth date" >
+              </div>
+              <div class="input-field">
+                <label>niv</label>
+                <input name="niv" type="text" placeholder="Enter birth date" >
+            </div>
+            <div class="input-field">
+              <label>mtps</label>
+              <input name="mtps" type="text" placeholder="Enter birth date" >
+          </div>
+          
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <select name="genre" required>
+                                <option disabled selected>Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+               
+                <div class="details ID">
+                    
+
+                    <button onclick="popUpSuccee()" type="submit" class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
                 </div>
               </div>
+  
+              {{-- <div class="form second">
+                  <div class="details address">
+                      <span class="title">Work Details</span>
+  
+                      <div class="fields">
+                        <div class="input-field">
+                            <label>Assigned Role</label>
+                            <input type="text" placeholder="Permanent or Temporary" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Fifa Country</label>
+                            <input type="text" placeholder="Enter nationality" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Sport Type</label>
+                            <input type="text" placeholder="Enter your state" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Other Role</label>
+                            <input type="text" placeholder="Enter your district" required>
+                        </div>
+
+                        <div class="input-field">
+                          <label>Fifa ID</label>
+                          <input type="number" placeholder="Enter ID number" required>
+                      </div>
+
+                      <div class="input-field">
+                        <label>Level</label>
+                        <select required>
+                            <option disabled selected>Select gender</option>
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advenced</option>
+                        </select>
+                      </div>
+                      </div>
+                          
+                  </div>
+  
+                  <div class="details family">
+                      
+  
+                      <div class="buttons">
+                          <div class="backBtn">
+                              <i class="uil uil-navigator"></i>
+                              <span class="btnText">Back</span>
+                          </div>
+                          
+                          <button type="submit" class="sumbit">
+                              <span class="btnText">Submit</span>
+                              <i class="uil uil-navigator"></i>
+                          </button>
+                      </div>
+                  </div> 
+              </div> --}}
+          </form>
+        </div>
+          </div>
+                {{-- <div class="modal-box">
+                  <div class="container">
+                    <header>Add new arbiter</header>
+                  <form action="add" method="POST">
+                    @csrf
+                    <div class="form first">
+                        <div class="details personal">
+                            <span class="title">Personal Details</span>
+        
+                            <div class="fields">
+                              <div class="input-field">
+                                  <label>First Name</label>
+                                  <input name="nom" type="text" placeholder="Enter first name" >
+                              </div>
+                              <div class="input-field">
+                                <label>Last Name</label>
+                                <input name="prenom" type="text" placeholder="Enter last name" >
+                            </div>
+      
+      
+                              <div class="input-field">
+                                  <label>Email</label>
+                                  <input name="login" type="text" placeholder="Enter email" >
+                              </div>
+                              
+                              <div class="input-field">
+                                <label>role</label>
+                                <input name="role" type="text" placeholder="Enter birth date" >
+                            </div>
+                            <div class="input-field">
+                              <label>country</label>
+                              <input name="pays" type="text" placeholder="Enter birth date" >
+                          </div>
+                          <div class="input-field">
+                            <label>Sport type</label>
+                            <input name="typeSport" type="text" placeholder="Enter birth date" >
+                        </div>
+                        <div class="input-field">
+                          <label>role2</label>
+                          <input name="role2" type="text" placeholder="Enter birth date" >
+                      </div>
+                      <div class="input-field">
+                        <label>statut</label>
+                        <input name="etat" type="text" placeholder="Enter birth date" >
+                    </div>
+                    <div class="input-field">
+                      <label>niv</label>
+                      <input name="niv" type="text" placeholder="Enter birth date" >
+                  </div>
+                  <div class="input-field">
+                    <label>mtps</label>
+                    <input name="mtps" type="text" placeholder="Enter birth date" >
+                </div>
+                <div class="input-field">
+                  <label>paye</label>
+                  <input name="paye" type="text" placeholder="Enter birth date" >
+              </div>
+      
+                              <div class="input-field">
+                                  <label>Gender</label>
+                                  <select name="genre" required>
+                                      <option disabled selected>Select gender</option>
+                                      <option>Male</option>
+                                      <option>Female</option>
+                                  </select>
+                              </div>
+      
+                          </div>
+                      </div>
+                     
+                      <div class="details ID">
+                          
+      
+                          <button type="submit" class="nextBtn">
+                              <span class="btnText">Next</span>
+                              <i class="uil uil-navigator"></i>
+                          </button>
+                      </div>
+                    </div>
+        
+                    {{-- <div class="form second">
+                        <div class="details address">
+                            <span class="title">Work Details</span>
+        
+                            <div class="fields">
+                              <div class="input-field">
+                                  <label>Assigned Role</label>
+                                  <input type="text" placeholder="Permanent or Temporary" required>
+                              </div>
+      
+                              <div class="input-field">
+                                  <label>Fifa Country</label>
+                                  <input type="text" placeholder="Enter nationality" required>
+                              </div>
+      
+                              <div class="input-field">
+                                  <label>Sport Type</label>
+                                  <input type="text" placeholder="Enter your state" required>
+                              </div>
+      
+                              <div class="input-field">
+                                  <label>Other Role</label>
+                                  <input type="text" placeholder="Enter your district" required>
+                              </div>
+      
+                              <div class="input-field">
+                                <label>Fifa ID</label>
+                                <input type="number" placeholder="Enter ID number" required>
+                            </div>
+      
+                            <div class="input-field">
+                              <label>Level</label>
+                              <select required>
+                                  <option disabled selected>Select gender</option>
+                                  <option>Beginner</option>
+                                  <option>Intermediate</option>
+                                  <option>Advenced</option>
+                              </select>
+                            </div>
+                            </div>
+                                
+                        </div>
+        
+                        <div class="details family">
+                            
+        
+                            <div class="buttons">
+                                <div class="backBtn">
+                                    <i class="uil uil-navigator"></i>
+                                    <span class="btnText">Back</span>
+                                </div>
+                                
+                                <button type="submit" class="sumbit">
+                                    <span class="btnText">Submit</span>
+                                    <i class="uil uil-navigator"></i>
+                                </button>
+                            </div>
+                        </div> 
+                    </div> --}}
+                {{-- </form>
+              </div>
+                </div>  --}}
+              </div>
+
             <section>
+              
                 <article class="card" data-state="#about">
+                  
                   <div class="card_inner" data-state="#about">
+                    
                     <div class="card-header">
+                      
                         <div class="pro_pic" style="background-image: url('images/imagesAdmin/etchiali.jpg');"></div>
                         <div class="pro_title"> 
-                          <h1 class="card-fullname">Etchiali Abdelhak</h1>
+                            
+                          <h1 class="card-fullname">etchiali</h1>
                           <div class="card-full" class="card-main">
                             <div class="card-section is-active" id="about">
                                 <div class="card-content">
                                     <div class="card-subtitle">PERSONAL INFORMATIONS</div>
-                          <h6> First Name : <Font  class="na" size="2pt" color="black">Etchiali</Font></h6>
-                          <h6> Last Name : <Font size="2pt" color="black">Abdelhak</Font></h6>
-                          <h6> Email : <Font size="2pt" color="black">etchiali@gmail.com</Font></h6>
-                          <h6> Gender : <Font size="2pt" color="black">male</Font></h6>
+                                       
+                          <h6 > First Name : <Font class="fname"  size="2pt" color="black">etchiali</Font></h6>
+                          <h6> Last Name : <Font class="lname" size="2pt" color="black">abdelhak</Font></h6>
+                          <h6> Email : <Font class="mail" size="2pt" color="black">e@gmail.com</Font></h6>
+                          <h6> Gender : <Font class="gen" size="2pt" color="black">male</Font></h6>
+                          <h6> Assigned Role : <Font class="role" size="2pt" color="black">Viewer</Font></h6>
+                          <h6> Fifa Country : <Font class="pays" size="2pt" color="black">Algeria</Font></h6>
+                          <h6> Sport Type : <Font class="tsport" size="2pt" color="black">Football</Font></h6>
+                          <h6> statut : <Font class="etat" size="2pt" color="black">well</Font></h6>
+                          <h6> Other Role : <Font class="role2" size="2pt" color="black">Var</Font></h6>
+                          <h6> Fifa id : <Font class="id" size="2pt" color="black">302457</Font></h6>
+                          <h6> level : <Font class="niv" size="2pt" color="black">ad</Font></h6>
                           
-                          <h6> Assigned Role : <Font size="2pt" color="black">Viewer</Font></h6>
-                          <h6> Fifa Country : <Font size="2pt" color="black">Algeria</Font></h6>
-                          <h6> Sport Type : <Font size="2pt" color="black">Football</Font></h6>
-                          <h6> level : <Font size="2pt" color="black">Fifa</Font></h6>
-                          <h6> Other Role : <Font size="2pt" color="black">Var</Font></h6>
-                          <h6> Fifa id : <Font size="2pt" color="black">302457</Font></h6>
-                          <h6> level : <Font size="2pt" color="black">Advenced</Font></h6>
-                                </div>
+                        </div>
                                
                             </div>
                             <div class="card-section matar" id="experience">
@@ -476,19 +952,23 @@
                             </div>
                             
                         </div>
-                        
+                       
                         </div> 
                         
                     </div>
-                   
+                    
                 </div>
+                
                 <div class="card-buttons" style="margin-top:392px; background:rgb(230, 228, 228);   border-bottom-left-radius: 20px; position: fixed; width:100% ">
                     <button class="is-active" data-section="#about" style="margin-left:92px; ">PERSONAL INFO</button>
                     <button  data-section="#experience">MATCH REF</button>
                     <button   data-section="#contact">REPORTS</button>
                 </div>
                 </article>
+              
               </section>
+            
+             
               
                 <section>
                   
@@ -500,17 +980,23 @@
                                 <a href="#deleteEmployeeModal" class="btn-danger" data-toggle="modal">
                                   <button style="display: flex"><img src="images/imagesAdmin/rem.png" style="width: 25px; margin-left:7px" alt=""><h4 style="margin-left: 3px; margin-top:8px">  delete</h4></button></a>
                                 </div>
+                                
+                                @foreach ($Arbitres as $Arbitre)
                                   <div class="list" >
                             
-                            <div class="imgbox" style="background-image: url('images/imagesAdmin/etchiali.jpg');" data-title="ETCHIALI Abdelhak" data-name="etchia" data-description="..............">
+                            <div class="imgbox" style="background-image: url('images/imagesAdmin/{{$Arbitre['image']}}');" data-title=" {{$Arbitre['nom']}} {{$Arbitre['prenom']}}" nom="{{$Arbitre['nom']}}" prenom="{{$Arbitre['prenom']}}" email="{{$Arbitre['login']}}" genre="{{$Arbitre['genre']}}" role="{{$Arbitre['role']}}" pays="{{$Arbitre['pays']}}" tsport="{{$Arbitre['typeSport']}}" etat="{{$Arbitre['etat']}}" role2="{{$Arbitre['role2']}}" niv="{{$Arbitre['niv']}}" id="{{$Arbitre['id']}}">
                             </div>
                             <h4 class="content">
-                                ETCHIALI Abdelhak
+                                {{$Arbitre['nom']}} {{$Arbitre['prenom']}}
                             </h4>
-                             <img src="images/imagesAdmin/edit.png" width="30px" height="30px" alt="">
-                            <img src="images/imagesAdmin/bin.png"  width="30px" height="30px" alt="">
+                            <a href="{{"edit/".$Arbitre['id']}}"><img src="images/imagesAdmin/edit.png" width="30px" height="30px" alt=""></button> </a>
+                            {{-- <a href="{{"list/".$Arbitre['id']}}"  class="edit-modal editBtn"><img src="images/imagesAdmin/edit.png" width="30px" height="30px" alt=""></a>  --}}
+
+                            <a onclick="popUp({{$Arbitre['id']}})"  class="pop" value="{{$Arbitre['id']}}"><img src="images/imagesAdmin/bin.png"  width="30px" height="30px" alt=""></a>
                         </div>
-                         <div class="list" >
+                        @endforeach
+                        
+                         {{-- <div class="list" >
                             <div class="imgbox" style="background-image: url('images/imagesAdmin/mustapha.jpg');" data-title="GHORBEL Mustapha" data-description="..............">
                             </div>
                             <h4 class="content">
@@ -581,11 +1067,11 @@
                             </h4>
                             <img src="images/imagesAdmin/edit.png" width="30px" height="30px" alt="">
                             <img src="images/imagesAdmin/bin.png"  width="30px" height="30px" alt="">
-                        </div>
+                        </div> --}}
                         
                      </div>
                  </section>
-               
+                 
                
         
             </div>
@@ -593,9 +1079,8 @@
         </div>
 
 
-    
-   
-    
+        <script src="https://code.jquery.com/jquery-3.6.4.slim.js" integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="js/AdminJs/slide.js"></script>
 <script src="js/AdminJs/popUp.js"></script>
 
