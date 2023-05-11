@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\RefereController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\AnalyController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +37,7 @@ Route::get('/payee', function () {
 Route::get('/instructor', function () {
     return view('Admin/instructor');
 });
-Route::get('/analytics', function () {
-    return view('Admin/analytic');
-});
+
 Route::get('/repport', function () {
     return view('Admin/report');
 });
@@ -68,3 +68,5 @@ Route::get('edit/{id}', [RefereController::class, 'edit']);
 Route::post('edit', [RefereController::class, 'update']);
 
 Route::get('delete/{id}', [RefereController::class, 'delete']);
+Route::view('analytics', 'Admin.analytic');
+Route::get('/analytics', [AnalyController::class, 'statistic']);

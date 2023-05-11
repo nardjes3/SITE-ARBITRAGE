@@ -19,13 +19,13 @@
 <body style="background-image:url({{asset('images/imagesAdmin/1.jpg')}}); background-repeat:no-repeat; background-attachment:fixed; background-size:100% 100%; ">
    
     <form action="/edit" method="POST" enctype="multipart/form-data">
-        @csrf
-        <input type="hidden" name="id" value="{{$data['id']}}" >
+        {{ csrf_field()}}
+        <input type="hidden" name="id" value="<?=$data->id;?>">
         <div class="upload">
             <img class="img" src="{{asset('images/imagesAdmin/'.$data['image'])}}" width = 100 height = 100 alt="">
 
             <div class="round">
-              <input name="image" type="file" value="{{$data->image}}">
+              <input name="image" type="file" value="{{$data['image']}}">
                       </div>
           </div>
 
@@ -90,7 +90,6 @@
    
         <input type="submit" id="button" value="SUBMIT" onclick="checkPassword();"> 
  
-    
     </form>
 
     <script src="js/AdminJs/up.js"></script>

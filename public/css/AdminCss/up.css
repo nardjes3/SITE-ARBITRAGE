@@ -93,6 +93,7 @@ p
     margin-top: -120px;
   border-radius: 50%;
   border: 6px solid #eaeaea;
+  z-index: 1000;
 }
 .upload img{
   border-radius: 50%;

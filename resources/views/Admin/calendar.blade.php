@@ -369,14 +369,14 @@
         <a href="/ligue"><button class="btn1"> ligue 1 </button></a>
       <a href="/ligue2"><button class="btn2">ligue 2</button></a>
     </div>
-      <div class="today-date">
+      <div class="today-date ">
         <div class="event-day">wed</div>
         <div class="event-date">12th december 2022</div>
       </div>
-      <div class="events open-btn" ></div>
+      <div class="events open-btn" > </div>
       <div class="add-event-wrapper">
         <div class="add-event-header">
-          <div class="title">Add Event</div>
+          <div class="title">Add Match</div>
           <i class="fas fa-times close"></i>
         </div>
         <div class="add-event-body">
@@ -402,7 +402,7 @@
           </div>
         </div>
         <div class="add-event-footer">
-          <button class="add-event-btn">Add Event</button>
+          <button class="add-event-btn">Add Match</button>
         </div>
       </div>
     </div>

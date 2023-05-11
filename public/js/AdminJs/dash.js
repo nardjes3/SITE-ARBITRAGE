@@ -1,43 +1,3 @@
-const chartData = {
-    labels: ["Beginner", "Intermediate", "Advenced"],
-    data: [30, 45, 25],
-  };
-  
-  const myChart = document.querySelector(".my-chart");
-  const ul = document.querySelector(".programming-stats .det ul");
-  
-  new Chart(myChart, {
-    type: "doughnut",
-    data: {
-      labels: chartData.labels,
-      datasets: [
-        {
-          label: "Percentage",
-          data: chartData.data,
-        },
-      ],
-    },
-    options: {
-      borderWidth: 3,
-      borderRadius: 2,
-      hoverBorderWidth: 0,
-      plugins: {
-        legend: {
-          display: false,
-        },
-      },
-    },
-  });
-  
-  const populateUl = () => {
-    chartData.labels.forEach((l, i) => {
-      let li = document.createElement("li");
-      li.innerHTML = `${l}: <span class='percentage'>${chartData.data[i]}%</span>`;
-      ul.appendChild(li);
-    });
-  };
-  
-  populateUl();
   
   let customChart = document.getElementById("custom-chart").getContext("2d");
 
@@ -129,7 +89,7 @@ const counters = document.querySelectorAll(".counter");
            function updateCounting() {
 
                 if (initial_count < 1000) {
-                    initial_count += 5;
+                    initial_count += 1;
                     counter.innerText = initial_count;
                 }
 

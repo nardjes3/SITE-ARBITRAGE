@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Arbitre;
+use Illuminate\Support\Facades\DB;
 
 class RefereController extends Controller
 {
@@ -27,24 +28,22 @@ class RefereController extends Controller
         $arbi ->role2= $req->input('role2');
         $arbi ->mtps= $req->input('mtps');
         $arbi ->niv= $req->input('niv');
-        $arbi ->image= $req->input('image');
-
-        
 
     if($req->hasFile('image')){
         $distination_path='public/images/imagesAdmin';
         $image=$req->file('image');
         $image_name=$image->getClientOriginalName();
-        $path=$request->file('image')->storeAs($distination_path,$image_name);
+        $image->move($distination_path, $image_name);
 
         $arbi->image=$image_name;
     }
     $arbi -> save();
-        return redirect()->back();}
+    return redirect()->back();}
 
     function edit($id){
         $data= Arbitre::find($id);
         return view('Admin.upArbi',['data'=>$data]);
+
     }
     
     function update(Request $req){
@@ -64,17 +63,26 @@ class RefereController extends Controller
         $data->role2 = $req->role2;
         $data->etat = $req->etat;
         $data->role = $req->role;
-        $data->image = $req->image;
         
         if($req->hasFile('image')){
             $distination_path='public/images/imagesAdmin';
             $image=$req->file('image');
             $image_name=$image->getClientOriginalName();
-            $path=$request->file('image')->storeAs($distination_path,$image_name);
+            $image->move($distination_path, $image_name);
     
             $data->image=$image_name;
         }
-
+        // if($image = $req->file('image')){
+        //     $distination_path='public/images/imagesAdmin';
+        //     $image_pro=time()."_".$image->getClientOriginalExtension();
+        //     $image->move($distination_path, $image_pro);
+        //     $data['image'] = "$image_pro";
+        // }
+        // else{
+        //     unset($data['image']);
+        // }
+       
+      
         $data->save();
         return redirect('list');
 

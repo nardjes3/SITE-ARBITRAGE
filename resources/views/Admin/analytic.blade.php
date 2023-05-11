@@ -31,6 +31,7 @@
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     
 
+    
 </head>
 <body style="background-image:url(images/imagesAdmin/back1.jpg); background-repeat:no-repeat; background-attachment:fixed; background-size:100% 100%; ">
   {{-- <video autoplay loop muted  class="back-vid">
@@ -274,14 +275,14 @@
         <div class="counter-wrapper">
             <span class="counter-icon"><img style="width: 60px" src="images/imagesAdmin/referee.png" alt=""></span>
             <div class="counter-info">
-                <h1 class="counter" data-count="15000000">0</h1>
+                <h1 class="counter" data-count="{{$arbitre}}">0</h1>
                 <p>Arbiters</p>
             </div>
         </div>
         <div class="counter-wrapper" style="margin-left: 20px">
             <span class="counter-icon"><img style="width: 70px" src="images/imagesAdmin/instructor.png" alt=""></span>
             <div class="counter-info">
-                <h1 class="counter" data-count="2200">0</h1>
+                <h1 class="counter" data-count="{{$instructor}}">0</h1>
                 <p>Instructors</p>
             </div>
         </div>
@@ -315,18 +316,16 @@
 </div>
 
 <div class="cont">
-            <h2 class="chart-heading" >Referee level percentage</h2>
+           
     <div class="programming-stats">
-      <div class="chart-container">
-        <canvas class="my-chart"></canvas>
-      </div>
+      
 
       <div class="det">
         <ul></ul>
       </div>
     </div>
 </div>
-
+<div id="piechart" style="width: 700px; height: 400px;"></div>
 <div class="chart-cont" >
     <h2 class="chart-head">Goals scored</h2>
     <canvas id="custom-chart"></canvas>
@@ -397,23 +396,41 @@
   </div>
 </div> --}}
 
-
     
+<script  src="https://www.gstatic.com/charts/loader.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-    
+
 	<script src="js/AdminJs/dash.js"></script>
     <script src="js/AdminJs/sidebar.js"></script>
     <script src="js/AdminJs/sdBar.js"></script>
     <script src="js/AdminJs/analy.js"></script>
-
- 
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script> 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+  google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
+      function drawChart() {
+
+        var info = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Beginner',       {{$beg}}],
+          ['Intermediate',  {{$int}}],
+          ['Advenced',     {{$ad}}]
+        ]);
+
+        var title = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(info, title);
+      }
+</script>
 </body>
 </html>
