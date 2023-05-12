@@ -276,10 +276,10 @@
         <div class="popup-content">
           <span class="close-btn">&times;</span>
           <div class="frm">
-            <div class="title1">designation</div>
+            <div class="title1"></div>
           <div class="form">
             <div class="inputfield">
-                <label>Ligue N° </label>
+                <label>Ligue level </label>
                 <div class="custom_select">
                   <select>
                     <option value=""> </option>
@@ -303,7 +303,27 @@
                     <option value="08">08</option>
                   </select>
                 </div>
-             </div>    
+             </div>  
+             <div class="inputfield">
+              <label>Equipe 1</label>
+              <input type="text" class="input">
+           </div> 
+           <div class="inputfield">
+            <label>Equipe 2</label>
+            <input type="text" class="input">
+         </div> 
+         <div class="inputfield">
+          <label>heure start</label>
+          <input type="text" class="input">
+       </div> 
+       <div class="inputfield">
+        <label>heure end</label>
+        <input type="text" class="input">
+     </div> 
+     <div class="inputfield">
+      <label>date</label>
+      <input type="date" class="input">
+   </div>   
              <div class="inputfield">
                 <label>Terrain</label>
                 <input type="text" class="input">
@@ -373,7 +393,7 @@
         <div class="event-day">wed</div>
         <div class="event-date">12th december 2022</div>
       </div>
-      <div class="events open-btn" > </div>
+      <div class="events "><button class="open-btn "> </button> </div>
       <div class="add-event-wrapper">
         <div class="add-event-header">
           <div class="title">Add Match</div>

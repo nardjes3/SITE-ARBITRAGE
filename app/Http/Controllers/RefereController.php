@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Arbitre;
+use App\Models\User;
+
 use Illuminate\Support\Facades\DB;
 
 class RefereController extends Controller
@@ -16,6 +18,7 @@ class RefereController extends Controller
     public function addArbi(Request $req)
     {
         $arbi = new Arbitre;
+        $user = new User;
 
         $arbi ->nom= $req->input('nom');
         $arbi ->prenom= $req->input('prenom');
@@ -29,6 +32,12 @@ class RefereController extends Controller
         $arbi ->mtps= $req->input('mtps');
         $arbi ->niv= $req->input('niv');
 
+        $user ->email= $req->input('login');
+        $user ->name= $req->input('nom');
+        $user ->password= $req->input('mtps');
+        $user ->rl= 0;
+
+
     if($req->hasFile('image')){
         $distination_path='public/images/imagesAdmin';
         $image=$req->file('image');
@@ -38,6 +47,7 @@ class RefereController extends Controller
         $arbi->image=$image_name;
     }
     $arbi -> save();
+    $user -> save();
     return redirect()->back();}
 
     function edit($id){

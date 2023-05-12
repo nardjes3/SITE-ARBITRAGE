@@ -19,8 +19,10 @@ use App\Http\Controllers\AnalyController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
+
+
 
 Route::get('/dash', function () {
     return view('Admin/dash');
@@ -70,3 +72,15 @@ Route::post('edit', [RefereController::class, 'update']);
 Route::get('delete/{id}', [RefereController::class, 'delete']);
 Route::view('analytics', 'Admin.analytic');
 Route::get('/analytics', [AnalyController::class, 'statistic']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/Sec', function(){
+    return view('Admin/dash');
+
+});
+Route::get('/Arbitre/{id}', function(){
+    return view('Admin/ArbitreTest');
+
+});
