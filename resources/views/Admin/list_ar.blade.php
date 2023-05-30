@@ -12,249 +12,36 @@
 	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 	<link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="css/AdminCss/sdBar.css">
-        <link rel="stylesheet" href="css/AdminCss/header.css">
         <link rel="stylesheet" href="css/AdminCss/slide.css">
         <link rel="stylesheet" href="css/AdminCss/popUp.css">
         <link rel="stylesheet" href="css/AdminCss/up.css">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        
-
-        
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS-->
+
+    <!-- Main CSS-->
+    <link href="css/AdminCss/header.css" rel="stylesheet" media="all">
+    <link href="css/AdminCss/menu.css" rel="stylesheet" media="all">
 
 </head>
 <body style="background-image:url(images/imagesAdmin/1.jpg); background-repeat:no-repeat; background-attachment:fixed; background-size:100% 100%; ">
     
-    <div class="sidebar">
-        <div class="logo">
-          <img src="images/imagesAdmin/logo04.png" alt="logo" id="logo_img" style="width: 60px; height:60px; margin-right:20px">
-          <div class="logo_text">Whistle Experts</div>
-          <i class='bx bx-menu-alt-right' id="btn" ></i>
-        </div>
-      
-        <div class="nav_list">
-          <ul>
-            <li>
-              <a href="/dash">
-                <span ><img src="images/imagesAdmin/dashboard.png" style="width:30px; margin-left:30px;" alt=""></span>
-                <span class="links_name">Dashboard</span>
-              </a>
-              <span class="tooltip">Dashboard</span>
-            </li>
-      
-            <li>
-              <a href="/list">
-                <span class="icon"><img src="images/imagesAdmin/referee.png" style="width:30px; margin-left:30px;" alt=""></span>
-                <span class="links_name">Referees</span>
-              </a>
-              <span class="tooltip">Referees</span>
-            </li>
-      
-            <li>
-              <a href="/repport">
-                <span class="icon"><img src="images/imagesAdmin/reports.png" style="width:30px; margin-left:30px;" alt=""></span>
-                <span class="links_name Messages">Reports</span>
-              </a>
-              <span class="tooltip">Reports</span>
-            </li>
-      
-            <li>
-              <a href="/instructor">
-                <span class="icon"><img src="images/imagesAdmin/instructor.png" style="width:33px; margin-left:30px;" alt=""></span>
-                <span class="links_name">Instructors</span>
-              </a>
-              <span class="tooltip">Instructors</span>
-            </li>
-      
-            <li>
-              <a href="/payee">
-                <span class="icon"><img src="images/imagesAdmin/paiement.png" style="width:30px; margin-left:30px;" alt=""></span>
-                <span class="links_name">Payment</span>
-              </a>
-              <span class="tooltip">Payment</span>
-            </li>
-      
-            <li>
-              <a href="/design">
-                <span class="icon"><img src="images/imagesAdmin/calendar.png" style="width:30px; margin-left:30px;" alt=""></span>
-                <span class="links_name">Calendar</span>
-              </a>
-              <span class="tooltip">Calendar</span>
-            </li>
-            <li>
-              <a href="/analytics">
-                <span class="icon"><img src="images/imagesAdmin/chart.png" style="width:35px; margin-left:30px;" alt=""></span>
-                <span class="links_name">Analytics</span>
-              </a>
-              <span class="tooltip">Analytics</span>
-            </li>
-          </ul>
-      
-      
-          <div class="logout">
-            <a href="#">
-              <span class="icon"><img src="images/imagesAdmin/logout.png" style="width:30px; margin-left:30px;" alt=""></span>
-              <span class="links_name">Log out</span>
-            </a>
-            <span class="tooltip">Log out</span>
-          </div>
-        </div>
-      </div>
-    <div class="wrapper">
-        <div class="navbar">
-          <div class="navbar_left">
-            <div class="logo">
-              </div>
-          </div>
-      
-          <div class="navbar_right" >
-            <div class="not" >
-                <img src="images/imagesAdmin/notification.png" style="margin-right: 20px; width:30px; margin-top:8px"  onclick="menuT3();" alt="profile_img">
-              
-                <div class="menu3" >
 
-                    <h2>4 Notifications</h2>
-        
-                    <div class="row">
-                        <img src="images/imagesAdmin/alarm.png">
-                        <div class="tag">
-                            
-                                <p class="user_activity">
-                                  <strong>Mark Webber</strong> sent you a 
-                                  <b>private message!</b>
-                                </p>
-                                <p class="time">1m ago</p>
-                              
-                        </div>
-                    </div>
-        
-                    <div class="row">
-                        <img src="images/imagesAdmin/alarm.png">
-                        <div class="tag">
-                            
-                                <p class="user_activity">
-                                  <strong>Mark Webber</strong> sent you a 
-                                  <b>private message!</b>
-                                </p>
-                                <p class="time">1m ago</p>
-                              
-                        </div>
-                    </div>
-        
-                    <div class="row">
-                        <img src="images/imagesAdmin/alarm.png">
-                        <div class="tag">
-                            
-                                <p class="user_activity">
-                                  <strong>Mark Webber</strong> sent you a 
-                                  <b>private message!</b>
-                                </p>
-                                <p class="time">1m ago</p>
-                              
-                        </div>
-                    </div>
-        
-                    <div class="row">
-                        <img src="images/imagesAdmin/alarm.png">
-                        <div class="tag">
-                            
-                                <p class="user_activity">
-                                  <strong>Mark Webber</strong> sent you a 
-                                  <b>private message!</b>
-                                </p>
-                                <p class="time">1m ago</p>
-                              
-                        </div>
-                    </div>
-        
-                    <div class="show_all">
-                        <p class="link">Show All</p>
-                    </div> 
-        
-            </div>
-            </div>
-            {{-- <div class="mail" >
-                <img src="images/imagesAdmin/email.png"  onclick="menuT2();" alt="profile_img">
-              
-                <div class="menu2" >
-
-                    <h2>List of reports</h2>
-        
-                    <div class="row">
-                        <img src="images/imagesAdmin/etchiali.jpg">
-                        <div class="tag">
-                            <strong>Mr Etchiali</strong>
-                            <p>Yesterday at 07:12 </p>
-                        </div>
-                    </div>
-        
-                    <div class="row">
-                        <img src="images/imagesAdmin/mustapha.jpg">
-                        <div class="tag">
-                            <strong>Mr ghorbel</strong>
-                            <p>10/04/2023</p>
-                        </div>
-                    </div>
-        
-                    <div class="row">
-                        <img src="images/imagesAdmin/ar05.jpg">
-                        <div class="tag">
-                            <strong>Mr Burt</strong>
-                            <p>10/04/2023</p>
-                        </div>
-                    </div>
-        
-                    <div class="row">
-                        <img src="images/imagesAdmin/gabriel.jpg">
-                        <div class="tag">
-                            <strong>Mr gabriel</strong>
-                            <p>21/03/2023</p>
-                        </div>
-                    </div>
-        
-                    <div class="show_all">
-                        <p class="link">Show All Reports</p>
-                    </div> 
-        
-            </div>
-            </div> --}}
-            <div class="profile">
-              <div class="icon_wrap">
-                <img src="images/imagesAdmin/sec.jpg" style="border-radius: 50%; border-color: white;" alt="profile_pic">
-                <span class="name" onclick="menuT();">John Alex</span>
-                <i  class="fas fa-chevron-down" onclick="menuT();"></i>
-              </div>
-      
-              <div class="menu">
-                <h3>
-                    User Account
-                    <div>
-                        Operational Team
-                    </div>
-                </h3>
-                <ul>
-                    <li>
-                        <span class="material-icons icons-size">person</span>
-                        <a href="/profilAdmin">My Profile</a>
-                    </li>
-                   
-                    <li>
-                        <span class="material-icons icons-size">account_balance_wallet</span>
-                        <a href="#">Wallet</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        
-    </div>
-</div>
-
+  <div class="main-content" style="margin-top: 100px">
+    @include('Admin/menu')
         <div class="cards-wrapper">
 
           <div class="add">
@@ -262,15 +49,19 @@
             
           <div class="modal-box">
             <div class="container">
-              <form action="list" method="POST" enctype="multipart/form-data">
+              <form class="fr" action="list" method="POST" enctype="multipart/form-data">
                 {{ csrf_field()}}
-              <div class="upload" style="margin-top: 30px">
+                <div class="close-btn">&times;</div>
+
+              <div class="upload" style="margin-top: 50px">
+
                 <img class="img" src="images/imagesAdmin/referee.png" width = 100 height = 100 alt="">
     
                 <div class="round">
                   <input name="image" type="file" >
                           </div>
               </div>
+              
             <div class="ligne">
                 <label>First Name</label>
                           <input name="nom" type="text" placeholder="Enter the First Name">
@@ -332,7 +123,7 @@
                 {{-- <input type="submit" id="button" value="SUBMIT" onclick="checkPassword();">  --}}
          
             
-                    <button onclick="popUpSuccee()" type="submit" class="nextBtn">
+                    <button style="background-color: transparent; margin-left:380px" onclick="popUpSuccee()" type="submit" class="nextBtn">
                         <span class="btnText"></span>
                         <i class="uil uil-navigator"></i>
                     </button>
@@ -552,37 +343,29 @@
 
                                         
                             
-                                        <div class="row">
-                                            <img src="images/imagesAdmin/accept.png">
-                                            <div class="tag">
+                                        <div class="row" >
+                                            <img style="width: 50px;margin-right:10px" src="images/imagesAdmin/accept.png">
+                                            <div >
                                                 
-                                                    <p class="user_activity">
-                                                      <strong>Repport completed</strong>
-                                                    </p>
+                                                   
                                                     <p class="time">Belgica / USA</p>
                                                   
                                             </div>
                                         </div>
                             
-                                        <div class="row">
-                                            <img src="images/imagesAdmin/accept.png">
+                                        <div class="row" >
+                                            <img style="width: 50px; margin-right:10px" src="images/imagesAdmin/accept.png">
                                             <div class="tag">
-                                                
-                                                <p class="user_activity">
-                                                    <strong>Repport completed</strong>
-                                                  </p>
+                                               
                                                   <p class="time">Piru / Dinamarc</p>
                                                   
                                             </div>
                                         </div>
                             
-                                        <div class="row">
-                                            <img src="images/imagesAdmin/accept.png">
+                                        <div class="row" >
+                                            <img style="width: 50px; margin-right:10px" src="images/imagesAdmin/accept.png">
                                             <div class="tag">
-                                                
-                                                <p class="user_activity">
-                                                    <strong>Repport completed</strong>
-                                                  </p>
+                                               
                                                   <p class="time">Guinea / Suda</p>
                                                   
                                             </div>
@@ -627,12 +410,12 @@
                                 @foreach ($Arbitres as $Arbitre)
                                   <div class="list" >
                             
-                            <div class="imgbox" style="background-image: url('images/imagesAdmin/{{$Arbitre['image']}}');" data-title=" {{$Arbitre['nom']}} {{$Arbitre['prenom']}}" nom="{{$Arbitre['nom']}}" prenom="{{$Arbitre['prenom']}}" email="{{$Arbitre['login']}}" genre="{{$Arbitre['genre']}}" role="{{$Arbitre['role']}}" pays="{{$Arbitre['pays']}}" tsport="{{$Arbitre['typeSport']}}" etat="{{$Arbitre['etat']}}" role2="{{$Arbitre['role2']}}" niv="{{$Arbitre['niv']}}" id="{{$Arbitre['id']}}">
+                            <div class="imgbox" style="background-image: url('images/imagesAdmin/{{$Arbitre['image']}}');" data-title=" {{$Arbitre['nom']}} {{$Arbitre['prenom']}}" nom="{{$Arbitre['nom']}}" prenom="{{$Arbitre['prenom']}}" email="{{$Arbitre['email']}}" genre="{{$Arbitre['genre']}}" role="{{$Arbitre['role']}}" pays="{{$Arbitre['pays']}}" tsport="{{$Arbitre['typeSport']}}" etat="{{$Arbitre['etat']}}" role2="{{$Arbitre['role2']}}" niv="{{$Arbitre['niv']}}" id="{{$Arbitre['id']}}">
                             </div>
                             <h4 class="content">
                                 {{$Arbitre['nom']}} {{$Arbitre['prenom']}}
                             </h4>
-                            <a href="{{"edit/".$Arbitre['id']}}"><img src="images/imagesAdmin/edit.png" width="30px" height="30px" alt=""></button> </a>
+                            <a href="{{"edit/".$Arbitre['id']}}"><img src="images/imagesAdmin/edit.png" width="30px" height="30px" alt=""></a>
                             {{-- <a href="{{"list/".$Arbitre['id']}}"  class="edit-modal editBtn"><img src="images/imagesAdmin/edit.png" width="30px" height="30px" alt=""></a>  --}}
 
                             <a onclick="popUp({{$Arbitre['id']}})"  class="pop" value="{{$Arbitre['id']}}"><img src="images/imagesAdmin/bin.png"  width="30px" height="30px" alt=""></a>
@@ -720,7 +503,7 @@
             </div>
            
         </div>
-
+     
 
         <script src="https://code.jquery.com/jquery-3.6.4.slim.js" integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -734,6 +517,28 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!-- Jquery JS-->
+<script src="js/AdminJs/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap JS-->
+<script src="js/AdminJs/popper.min.js"></script>
+<script src="js/AdminJs/bootstrap.min.js"></script>
+<!-- Vendor JS       -->
+<script src="js/AdminJs/slick.min.js">
+</script>
+<script src="vendor/wow/wow.min.js"></script>
+<script src="js/AdminJs/animsition.min.js"></script>
+<script src="js/AdminJs/bootstrap-progressbar.min.js">
+</script>
+<script src="js/AdminJs/jquery.waypoints.min.js"></script>
+<script src="js/AdminJs/jquery.counterup.min.js">
+</script>
+<script src="js/AdminJs/circle-progress.min.js"></script>
+<script src="js/AdminJs/perfect-scrollbar.js"></script>
+<script src="js/AdminJs/Chart.bundle.min.js"></script>
+<script src="js/AdminJs/select2.min.js">
+</script>
 
+<script src="js/AdminJs/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

@@ -45,49 +45,27 @@ class LoginController extends Controller
     }
 
     protected function login(Request $request){
-       
-        $user1 = sec_commission::where('login', '=',$request->email)->first();
-        $user2 = Arbitre::where('login', '=',$request->email)->first();
-        if($user1 && $request->password == $user1->mtps){
-        
-          return redirect('/Sec');
-           
+        $credentials = $request->only('email', 'password');
+        if (Auth::guard('arbitre')->attempt($credentials)) {
+            // Authentication passed, redirect to admin dashboard
+            return redirect()->route('arbitre.dashboard');
+        }else 
+        if (Auth::guard('sec_commission')->attempt($credentials)) {
+            // Authentication passed, redirect to admin dashboard
+            return redirect()->route('Admin.dash');
+        }else
+         if (Auth::guard('instricteur_tech')->attempt($credentials)) {
+            // Authentication passed, redirect to admin dashboard
+            return redirect()->route('ins_tech.dashboard');
+        } else
+        if (Auth::guard('instructor_phi')->attempt($credentials)) {
+            // Authentication passed, redirect to admin dashboard
+            return redirect()->route('InsPhi.insPH');
         }
-        else if ($user2 && $request->password == $user2->mtps){
-            $arb = Arbitre::find($user2->id);
-            return view('Admin.ArbitreTest',['arb'=>$arb]);
-        }
-        else{
+        else {
+            // Authentication failed, redirect back with error
             return "error";
         }
-        
     }
-
-    //     $user = User::where('email', '=',$request->email)->first();
-    //     if($user && $request->password == $user->password){
-    //         $role=$user->rl;
-    //         echo $role;
-    //             switch($role){
-    //                 case 0:
-    //                     return redirect('/arbitre');
-    //                     break;
-    //                 case 1:
-    //                     return redirect('/dash');
-    //                     break;
-    //                 case 2:
-    //                     return redirect('/ins_tech');
-    //                     break;
-    //                 case 3:
-    //                      return redirect('/ins_phy');
-    //                     break;    
-    //                 default:
-    //                     Auth::logout();
-    //                     return redirect('/')->with('error','oopss');}
-
-    //     }
-    //     else{
-    //         return "error";
-    //     }
-        
-    // }
+   
 }

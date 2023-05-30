@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class video extends Model
 {
-    use HasFactory;
+    protected $table="videos";
+    protected $fillable=['video'];
 }

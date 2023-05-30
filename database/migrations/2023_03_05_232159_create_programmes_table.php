@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('programmes', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-            $table->mediumText('contenue');
-            $table->unsignedBigInteger('ins_ph_id');
-            $table->foreign('ins_ph_id')->references('id')->on('instructeur_phies');
+            $table->integer('semaines');
+            $table->string('jour');
+            $table->string('activite');
             $table->timestamps();
         });
     }

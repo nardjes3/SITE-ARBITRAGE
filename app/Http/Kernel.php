@@ -67,6 +67,11 @@ class Kernel extends HttpKernel
         'arbitre' => \App\Http\Middleware\arbitre::class,
         'ins_tech' => \App\Http\Middleware\ins_tech::class,
         'ins_phy' => \App\Http\Middleware\ins_phy::class,
+        'arbitre' => \App\Http\Middleware\ArbitreMiddleware::class,
+        'instricteur_tech' => \App\Http\Middleware\Ins_techMiddleware::class,
+        'sec_commission' => \App\Http\Middleware\AdminMiddleware::class,
+        'instructor_phi' => \App\Http\Middleware\InsPhiMiddleware::class,
+
 
 
     ];

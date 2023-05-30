@@ -15,17 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('lastName');
-            $table->string('email');
-            $table->integer('num_tel');
-            $table->string('Birthday');
-            $table->string('Gender');
-            $table->string('Country');
-            $table->string('typeSport');
-            $table->string('role');
+            // $table->integer('num_tel');
+            // $table->string('Birthday');
+            // $table->string('Gender');
+            // $table->string('Country');
+            // $table->string('typeSport');
+            // $table->string('role');
             $table->string('level');
-            $table->string('login');
-            $table->string('photo');
-            $table->string('mtps');
+            // $table->string('photo');
+            $table->string('email');
+            $table->string('password');
             $table->timestamps();
         });
     }

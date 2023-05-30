@@ -1,0 +1,115 @@
+/* Body styles */
+body {
+    background: linear-gradient(to right, #0099ff, #00ff99);
+    animation: gradient 10s ease infinite;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Container styles */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading styles */
+  h2 {
+    font-family: Arial, sans-serif;
+    color: #3d3d3d;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Table styles */
+  .table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+  }
+  
+  .table th {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #17a2b8;
+    color: #fff;
+  }
+  
+  .table td {
+    font-size: 14px;
+    color: #3d3d3d;
+    background-color: #fff;
+  }
+  
+  /* Alert styles */
+  .alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #bce8f1;
+    border-radius: 4px;
+    color: #31708f;
+    background-color: #d9edf7;
+  }
+  
+  .alert-success {
+    border-color: #d6e9c6;
+    color: #3c763d;
+    background-color: #dff0d8;
+  }
+  
+  .alert-danger {
+    border-color: #ebccd1;
+    color: #a94442;
+    background-color: #f2dede;
+  }
+  
+  /* Button styles */
+  .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #007bff;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #0069d9;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
+  /* Video styles */
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #333;
+  }
+  

@@ -16,10 +16,14 @@ return new class extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->string('grade');
-            $table->string('adresse');
+            $table->string('gender');
             $table->integer('num_tel');
-            $table->string('login');
-            $table->string('mtps');
+            $table->string('country');
+            $table->string('level');
+            $table->string('main_role');
+            $table->string('image');
+            $table->string('email');
+            $table->string('password');
             $table->timestamps();
         });
     }

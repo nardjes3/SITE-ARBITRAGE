@@ -33,7 +33,7 @@
 
     
 </head>
-<body style="background-image:url(images/imagesAdmin/back1.jpg); background-repeat:no-repeat; background-attachment:fixed; background-size:100% 100%; ">
+<body style="background-image:url(images/imagesAdmin/bec.png); background-repeat:no-repeat; background-attachment:fixed; background-size:100% 100%; ">
   {{-- <video autoplay loop muted  class="back-vid">
 	    <source src="images/imagesAdmin/Background.mp4" type="video/mp4"><source>
 	</video> --}}

@@ -13,8 +13,13 @@ return new class extends Migration
     { 
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->string('niveau');
-            $table->string('type');
+            $table->string( column:'question')->default( value:'0')->nullable();
+            $table->string('level');
+            $table->string( column: 'a')->default( value: '0')->nullable();
+            $table->string( column: 'b')->default( value:'0')->nullable();
+            $table->string( column:'c')->default( value: '0')->nullable();
+            $table->string( column: 'd')->default( value: '0')->nullable();
+            $table->string( column: 'ans')->default( value: '0')->nullable();
             $table->timestamps();
         });
     }

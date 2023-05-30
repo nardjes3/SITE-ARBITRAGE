@@ -674,3 +674,12 @@ transform: translateX(-50%) translateY(-64px);
     color:#fff;
     background-color:#882121;
     border-color:#7e1e1e}
+
+    .row{
+      display: flex;
+       background-color:aliceblue;
+        border-radius:50px;
+         cursor: pointer;
+         margin-bottom: 10px;
+         
+    }

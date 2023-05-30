@@ -12,9 +12,9 @@
 
   .container {
     position: relative;
-    width: 1000px;
+    
     height: 550px;
-    margin: 0 auto;
+    margin-left: 200px;
     padding: 5px;
     color: #fff;
     display: flex;
@@ -24,7 +24,7 @@
      backdrop-filter: blur(20px);
   }
   .left {
-    width: 60%;
+    width: 55%;
     padding: 20px;
   }
   .calendar {
@@ -262,8 +262,10 @@
     padding-left: 4px;
   }
   .events .event {
+    border-radius: 50px;
     position: relative;
-    width: 95%;
+    width: 60%;
+    margin-left: 100px;
     min-height: 7 0px;
     display: flex;
     justify-content: center;
@@ -272,7 +274,7 @@
     padding: 0 20px;
     padding-left: 50px;
     color: #fff;
-    background: linear-gradient(90deg, #000000, black);
+    background: linear-gradient(90deg, #c97474, rgb(65, 27, 27));
     cursor: pointer;
   }
   /* even event */
@@ -793,7 +795,7 @@
 }
 
 .butt{
-  margin-left: 50px;
+  margin-left: 80px;
 }
 .btn1{
   border-radius: 20px;

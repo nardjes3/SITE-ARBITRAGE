@@ -1,0 +1,48 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.button-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  padding: 50px;
+  margin: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.button-box:hover {
+  transform: rotate(20deg);
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif; 
+}
+
+@media only screen and (max-width: 600px) {
+  .button-box {
+    padding: 30px;
+  }
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}

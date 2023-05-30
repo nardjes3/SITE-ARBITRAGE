@@ -22,20 +22,16 @@ class RefereController extends Controller
 
         $arbi ->nom= $req->input('nom');
         $arbi ->prenom= $req->input('prenom');
-        $arbi ->login= $req->input('login');
+        $arbi ->email= $req->input('login');
         $arbi ->role= $req->input('role');
         $arbi ->genre= $req->input('genre');
         $arbi ->pays= $req->input('pays');
         $arbi ->typeSport= $req->input('typeSport');
         $arbi ->etat= $req->input('etat');
         $arbi ->role2= $req->input('role2');
-        $arbi ->mtps= $req->input('mtps');
+        $arbi ->password= bcrypt( $req->input('mtps'));
         $arbi ->niv= $req->input('niv');
 
-        $user ->email= $req->input('login');
-        $user ->name= $req->input('nom');
-        $user ->password= $req->input('mtps');
-        $user ->rl= 0;
 
 
     if($req->hasFile('image')){
@@ -47,7 +43,6 @@ class RefereController extends Controller
         $arbi->image=$image_name;
     }
     $arbi -> save();
-    $user -> save();
     return redirect()->back();}
 
     function edit($id){
@@ -66,7 +61,7 @@ class RefereController extends Controller
 
         $data->nom = $req->nom;
         $data->prenom = $req->prenom;
-        $data->login = $req->login;
+        $data->email = $req->login;
         $data->role = $req->role;
         $data->pays = $req->pays;
         $data->typeSport = $req->typeSport;

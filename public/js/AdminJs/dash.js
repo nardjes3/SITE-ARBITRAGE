@@ -1,3 +1,14 @@
+
+
+const populateUl = () => {
+  chartData.labels.forEach((l, i) => {
+    let li = document.createElement("li");
+    li.innerHTML = `${l}: <span class='percentage'>${chartData.data[i]}%</span>`;
+    ul.appendChild(li);
+  });
+};
+
+populateUl();
   
   let customChart = document.getElementById("custom-chart").getContext("2d");
 

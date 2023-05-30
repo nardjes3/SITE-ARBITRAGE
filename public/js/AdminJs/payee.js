@@ -21,10 +21,14 @@ function searchTable() {
 
 
 function change(element){
-    var button = element.style.backgroundColor;
-    if(button=="red"){
+    var statut = element.textContent;
+    if(statut=="impaid"){
         element.style.backgroundColor="green";
         element.textContent = "paid";
+    }
+    else{
+        element.style.backgroundColor="red";
+        element.textContent = "impaid";
     }
     
     

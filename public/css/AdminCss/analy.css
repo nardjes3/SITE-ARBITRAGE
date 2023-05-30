@@ -1,72 +1,61 @@
-.counters {
-    width: 80vw;
-    margin-left: 100px;
-    margin-top: 30px;
-    align-items: center;
-    display: flex;
-  }
-  .container{
-    display: flex;
-  }
-  .counter-wrapper {
-    width: 39%;
-    height: 9rem;
-    
-    border-radius: 1rem;
-    padding: 1rem 2rem;
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    transition: .3s ease-in-out;
-    box-shadow: 0 .2rem .2rem #0006;
-  
-  }
-  
-  .counter-wrapper:nth-child(1) {
-    background: linear-gradient(45deg, pink, crimson);
-  }
-  
-  .counter-wrapper:nth-child(2) {
-    background: linear-gradient(45deg, cyan, blue);
-  }
-  
-  .counter-wrapper:nth-child(3) {
-    background: linear-gradient(45deg, mediumspringgreen, green);
-  }
-  
-  .counter-icon {
-    font-size: 2.5rem;
-  }
-  
-  .counter-info {
-    color: #fff;
-    text-shadow: 1px 1px 1px #0007;
-  }
-  
-  .counter-info h1.counter {
-    font: normal 2.8rem sans-serif;
-  }
-  
-  .counter-info p {
-    font: normal 1.1rem sans-serif;
-    margin-top: .4rem;
-  }
-  
 
+.chart-heading {
+    font-family: "Rubik", sans-serif;
+    color: #023047;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-align: center;
+  }
   
+  .chart-container {
+    width: 200px;
+  }
+  
+  .programming-stats {
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0 auto;
+    width: fit-content;
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 8px 32px;
+    color: #023047;
+    transition: all 400ms ease;
+  }
+  
+  .programming-stats:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px -7px rgba(0, 0, 0, 0.3);
+  }
+  
+  .programming-stats .details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .programming-stats .details ul li {
+    font-size: 16px;
+    margin: 12px 0;
+    text-transform: uppercase;
+  }
+  
+  .programming-stats .details .percentage {
+    font-weight: 700;
+    color: #e63946;
+  }
   
   .chart-cont {
-    background: linear-gradient(210deg, rgba(226, 226, 199, 0.658) 0, rgba(36, 34, 34, 0.1) 97%);
-       backdrop-filter: blur(30px);
-    width: 1000px;
-    padding: 10px 48px;
-    margin: 0 auto;
+    height: 540px;
+    width: 880px;
+
+    padding: 10px 28px;
+    margin-left: 10px;
     font-family: "Roboto", sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
-    margin-top:20px;
-    margin-right:150px;
+    background-color: white;
   }
   
   .chart-cont h2.chart-head {
@@ -75,66 +64,3 @@
     padding-bottom: 10px;
   }
   
-
-.content{
-    height: 140px;
-    width: 400px;
-    margin-right: 200px;
-    margin-top: 50px;
-}
-
-.content div{
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-}
-.content div .image{
-    background: transparent;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 2px 5px 10px #999;
-}
-
-.content div .image img{
-    height: 50px;
-    transition: transform 0.3s;
-}
-.content div .image img:hover{
-    transform: scale(1.05);
-}
-.content div .bar{
-    height: 50px;
-    width: 450px;
-    background: #efefef;
-    border-radius: 40px;
-    position: relative;
-    margin-left: 20px;
-    overflow: hidden;
-    box-shadow: 2px 5px 10px #999;
-}
-
-.content div .progress{
-    height: 80px;
-    border-radius: 40px;
-    background: linear-gradient(to right, var(--clr1), var(--clr2));
-}
-
-.content div .bar h1{
-    position: absolute;
-    right: 10px;
-    color: var(--clr1);
-    font-weight: 500;
-    font-size: 35px;
-}
-
-.content div .bar h2{
-    position: absolute;
-    left: 30px;
-    color: black;
-    font-weight: 600;
-    font-size: 25px;
-}

@@ -1,6 +1,6 @@
 button {
     height: 50px;
-    padding: 10px 30px;
+    width: 120px;
     font-size: 1.5rem;
     cursor: pointer;
     border: 0px;
@@ -42,14 +42,16 @@ button {
   }
 
   .d1 {
-    margin-top: 60px;
-    margin-left: 1000px;
+    margin-bottom: -30px;
+    margin-left: 1010px;
     font-size: 30px;
     
     
   }
   .d2 {
-    margin-top: -45px;
-    margin-left: 320px;
+    margin-left: 330px;
     font-size: 30px;
+  }
+  .d{
+    margin-top: 100px;
   }

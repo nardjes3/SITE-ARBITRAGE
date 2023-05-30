@@ -40,6 +40,22 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'arbitre' => [
+            'driver' => 'session',
+            'provider' => 'arbitres',
+        ],
+        'instricteur_tech' => [
+            'driver' => 'session',
+            'provider' => 'instricteur_techs',
+        ],
+        'sec_commission' => [
+            'driver' => 'session',
+            'provider' => 'sec_commissions',
+        ],
+        'instructor_phi' => [
+            'driver' => 'session',
+            'provider' => 'instructor_phis',
+        ]
     ],
 
     /*
@@ -64,6 +80,23 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'arbitres' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Arbitre::class,
+        ],
+        'instricteur_techs' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Instricteur_tech::class,
+        ],
+        'sec_commissions' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\sec_commission::class,
+        ]
+        ,
+        'instructor_phis' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\instructor_phi::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

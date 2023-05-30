@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('test_techniques', function (Blueprint $table) {
             $table->id();
             $table->string('niveau');
-            $table->unsignedBigInteger('ins_tech_id');
-            $table->foreign('ins_tech_id')->references('id')->on('instricteur_teches');
+            $table->string('questions');
+            $table->boolean('is_selected');
+            //$table->unsignedBigInteger('ins_tech_id');
+            //$table->foreign('ins_tech_id')->references('id')->on('instricteur_teches');
             $table->timestamps();
         });
     }

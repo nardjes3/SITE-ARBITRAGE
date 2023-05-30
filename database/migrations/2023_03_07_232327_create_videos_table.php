@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-            $table->string('type');
-            $table->unsignedBigInteger('ldj_id');
-            $table->foreign('ldj_id')->references('id')->on('loi_du_jeus');
+            $table->string('level');
+            $table->string('video');
+            $table->string( column: 'a')->default( value: '0')->nullable();
+            $table->string( column: 'b')->default( value:'0')->nullable();
+            $table->string( column:'c')->default( value: '0')->nullable();
+            $table->string( column: 'd')->default( value: '0')->nullable();
+            $table->string( column: 'ans')->default( value: '0')->nullable();
             $table->timestamps();
         });
     }

@@ -15,9 +15,15 @@ return new class extends Migration
             $table->id();
             $table->date('date');
             $table->string('heure_debut');
-            $table->string('type');
-            $table->integer('num_ligue');
-            $table->boolean('is_valide');
+            $table->string('heure_fin');
+            $table->integer('ligue');
+            $table->integer('day');
+            $table->string('arbi1');
+            $table->string('arbi2');
+            $table->string('arbi3');
+            $table->string('arbi4');
+            $table->string('equipe1');
+            $table->string('equipe2');
             $table->timestamps();
         });
     }

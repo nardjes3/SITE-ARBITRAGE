@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('login');
+            $table->string('email');
             $table->string('image');
             $table->string('genre');
             $table->string('role');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('etat');
             $table->string('role2');
             $table->string('niv');
-            $table->string('mtps');
+            $table->string('password');
             $table->timestamps();
         });
     }

@@ -167,24 +167,28 @@ tbody tr.hide td img {
     cursor:pointer;
 }
 
-.status.delivered {
+ .paid {
     background-color: #86e49d;
     color: #006b21;
 }
 
-.status.cancelled {
+ .impaid {
     background-color: #d893a3;
     color: #b30021;
 }
 
-.status.pending {
-    background-color: #ebc474;
+#paid {
+    color: #006b21;
 }
 
-.status.shipped {
-    background-color: #6fcaea;
+ #impaid {
+    color: #b30021;
 }
-
+button{
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+}
 
 @media (max-width: 1000px) {
     td:not(:first-of-type) {

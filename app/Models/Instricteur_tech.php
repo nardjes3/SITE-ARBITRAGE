@@ -4,8 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-class Instricteur_tech extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+class Instricteur_tech extends Authenticatable
 {
+    use Notifiable;
     use HasFactory;
+    public $timestamps = false;
+    protected $guard = 'arbitre';
+    protected $fillable = ['email', 'password'];
 }
+

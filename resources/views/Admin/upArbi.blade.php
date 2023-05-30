@@ -18,7 +18,7 @@
 </head>
 <body style="background-image:url({{asset('images/imagesAdmin/1.jpg')}}); background-repeat:no-repeat; background-attachment:fixed; background-size:100% 100%; ">
    
-    <form action="/edit" method="POST" enctype="multipart/form-data">
+    <form class="fr" action="/edit" method="POST" enctype="multipart/form-data">
         {{ csrf_field()}}
         <input type="hidden" name="id" value="<?=$data->id;?>">
         <div class="upload">
@@ -40,7 +40,7 @@
     </div>
     <div class="ligne">
         <label>Email</label>
-                  <input name="login" type="text" value="{{$data['login']}}">
+                  <input name="login" type="text" value="{{$data['email']}}">
       </div>
     <div class="ligne">
         <label>Assigned role</label>
@@ -77,12 +77,12 @@
     </div>
     <div class="ligne">
         <label for="password">Password</label>
-        <input id="password" name="mtps" type="text" value="{{$data['mtps']}}" class="pass">
+        <input id="password" name="mtps" type="text" value="{{$data['password']}}" class="pass">
       </div>
       
       <div class="ligne">
         <label for="password">Confirm Password</label>
-        <input id="confirm_password" name="mtps" type="text" value="{{$data['mtps']}}" class="pass">
+        <input id="confirm_password" name="mtps" type="text" value="{{$data['password']}}" class="pass">
       </div>
       
                       
