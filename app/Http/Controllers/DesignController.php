@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\rencontre;
 use App\Models\payement;
+use App\Models\Arbitre;
+use App\Notifications\ArbitreDesigneNotification;
+
 
 use Illuminate\Support\Facades\DB;
 
@@ -90,7 +93,18 @@ $datasave = [
 
 
     $design -> save();
-    
+     // Récupérer l'ID de l'arbitre désigné
+     $arbitreId = $req->input('arbi1'); // Modifier en fonction de votre logique
+
+     // Vérifier si l'ID de l'arbitre est valide
+     if ($arbitreId) {
+         $arbitre = Arbitre::find($arbitreId);
+         
+         // Vérifier si l'arbitre existe
+         if ($arbitre) {
+             $arbitre->notify(new ArbitreDesigneNotification());
+         }
+     }
     return view('Admin.calendar',['design'=>$design]);
 }
 }

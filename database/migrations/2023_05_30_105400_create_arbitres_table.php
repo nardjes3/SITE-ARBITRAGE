@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('role2');
             $table->string('niv');
             $table->string('password');
+            $table->boolean('notification_envoyee')->default(false);
             $table->timestamps();
         });
     }
