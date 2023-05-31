@@ -47,17 +47,18 @@
             </a>
           </li>
           <li>
-            <a href="/payee">
-              <i class="fas fa-credit-card"></i>
-              <span class="nav-item2">Payment</span>
-            </a>
-          </li>
-          <li>
             <a href="/design">
                 <i class="fas fa-calendar-alt"></i>
                 <span class="nav-item2">Calendar</span>
             </a>
           </li>
+          <li>
+            <a href="/payee">
+              <i class="fas fa-credit-card"></i>
+              <span class="nav-item2">Payment</span>
+            </a>
+          </li>
+         
           <li>
             <a href="/repport">
               <i class="fas fa-file-alt"></i>
@@ -88,8 +89,10 @@
                             
                             <div class="noti__item js-item-menu">
                                 <i class="fas fa-file-alt"></i>
+                                @if(Auth::guard('sec_commission')->user()->report_envoyee == "1")
                               <span class="quantity">1</span>
-                                <div class="email-dropdown js-dropdown">
+                              @endif
+                                {{-- <div class="email-dropdown js-dropdown">
                                     <div class="email__title">
                                         <p>You have 3 New Emails</p>
                                     </div>
@@ -123,9 +126,9 @@
                                     <div class="email__footer">
                                         <a href="#">See all emails</a>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
-                            <div class="noti__item js-item-menu">
+                            {{-- <div class="noti__item js-item-menu">
                                 <i class="fas fa-bell"></i>                                <span class="quantity">3</span>
                                 <div class="notifi-dropdown js-dropdown">
                                     <div class="notifi__title">
@@ -162,7 +165,7 @@
                                         <a href="#">All notifications</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="account-wrap">
                             <div class="account-item clearfix js-item-menu">

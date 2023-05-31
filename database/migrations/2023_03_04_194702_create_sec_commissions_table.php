@@ -22,9 +22,11 @@ return new class extends Migration
             // $table->string('typeSport');
             // $table->string('role');
             $table->string('level');
-            // $table->string('photo');
+            $table->string('image');
             $table->string('email');
             $table->string('password');
+            $table->boolean('report_envoyee')->default(false);
+            $table->boolean('ins_envoyee')->default(false);
             $table->timestamps();
         });
     }

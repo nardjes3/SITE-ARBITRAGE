@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\PdfFile;
+use App\Models\sec_commission;
 
 class PDFController extends Controller
 {
@@ -30,7 +31,12 @@ class PDFController extends Controller
     $pdf->prenom = $prenom;
     $pdf->fichier = $path;
     $pdf->save();
+    $admin = Auth::guard('sec_commission')->user();
 
+if ($admin instanceof sec_commission) {
+    $admin->report_envoyee = true; // Mettez la valeur à false si vous souhaitez définir la notification comme non envoyée.
+    $admin->save();
+}
     return redirect()->back()->with('success', 'PDF enregistré avec succès dans la base de données.');
 }
 

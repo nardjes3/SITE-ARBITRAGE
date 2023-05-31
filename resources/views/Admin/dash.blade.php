@@ -154,7 +154,7 @@
                         </div>
                         <div class="row">
                             <div class="chart-cont">
-                                <h2 class="chart-head">level of referees</h2>
+                                <h2 class="chart-head"></h2>
                                 <canvas id="custom-chart"></canvas>
                               </div>
                             <div class="col-lg-3">
