@@ -30,9 +30,11 @@
 
     <!-- Template Stylesheet -->
     <link href="{{URL('css/ArbitreCss/style.css')}}" rel="stylesheet">
+
 </head>
 
 <body>
+    
   {{-- <h1>welcomr {{Auth::guard('arbitre')->user()->id}}</h1> --}}
 
     <!-- Spinner Start -->
@@ -53,11 +55,12 @@
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fa-solid fa-bell"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="/send"><i class="fa fa-paper-plane"></i></i></a>
                     
                 </div>
+                
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fa-solid fa-user"></i></a>Etchiali Abdelhak
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fa-solid fa-user"></i></a>{{Auth::guard('arbitre')->user()->nom}} {{Auth::guard('arbitre')->user()->prenom}}
                     
                 </div>
                 
@@ -65,11 +68,13 @@
         </div>
     </div>
     <!-- Topbar End -->
-
-
+    
     <!-- Navbar & Carousel Start -->
+    
     <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0" style="background:  rgba(152, 158, 175, 0.733);
+        backdrop-filter: blur(5px);">
+            
             <a href="index.html" class="navbar-brand p-0">
                 
                 <img src="{{URL('images/imagesArbitre/we.png')}}" width="300px" height="100px">
@@ -77,8 +82,9 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
+            
+            <div class="collapse navbar-collapse" id="navbarCollapse" >
+                <div class="navbar-nav ms-auto py-0" >
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="{{URL('/laws')}}" class="nav-item nav-link">Laws Of The Game</a>
                     <a href="/MyRepport" class="nav-item nav-link">Report</a>
@@ -89,15 +95,30 @@
                             <a href="{{URL('/quiz')}}" class="dropdown-item">Questions Quiz</a>
                         </div>
                     </div>
+                    @if(Auth::guard('arbitre')->user()->test_envoyee == "1")
+                    <span style="background-color: red; border-radius:50%; width:15px; font-size:12px; height:16px; text-align: center; margin-top:25px; z-index:100; cursor:pointer; color:white;">1</span>
+                    @endif
                     <a href="<?php echo "myDesign/" . Auth::guard('arbitre')->user()->id; ?>" class="nav-item nav-link">Designation</a>
+                    @if(Auth::guard('arbitre')->user()->notification_envoyee == "1")
+                    <span style="background-color: red; border-radius:50%; width:15px; font-size:12px; height:16px; text-align: center; margin-top:25px; z-index:100; cursor:pointer; color:white;">1</span>
+                    @endif
                     <a href="<?php echo "Mypayement/" . Auth::guard('arbitre')->user()->id; ?>" class="nav-item nav-link">Payement</a>
+                    @if(Auth::guard('arbitre')->user()->paye_envoyee == "1")
+                    <span style="background-color: red; border-radius:50%; width:15px; font-size:12px; height:16px; text-align: center; margin-top:25px; z-index:100; cursor:pointer; color:white;">1</span>
+                    @endif
+
                 </div>
                 
+                
             </div>
+            
         </nav>
+        
 
         <div  id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            
             <div  class="carousel-inner">
+                
                 <div style="height: 630px" class="carousel-item active">
                     <img  class="w-100" src="{{URL('images/imagesArbitre/carousel-1.jpg')}}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -149,7 +170,9 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        
     </div>
+    
     <!-- Navbar & Carousel End -->
 
 
@@ -188,6 +211,7 @@
 
     <!-- Testimonial Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
                 <h5 class="fw-bold text-primary text-uppercase">Referees</h5>
@@ -534,6 +558,7 @@
     <script src="{{URL('lib/waypoints/waypoints.min.js')}}"></script>
     <script src="{{URL('lib/counterup/counterup.min.js')}}"></script>
     <script src="{{URL('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+
 
     <!-- Template Javascript -->
     <script src="{{URL('js/ArbitreJs/main.js')}}"></script>

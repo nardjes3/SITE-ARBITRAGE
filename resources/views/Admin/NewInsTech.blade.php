@@ -285,26 +285,24 @@
                     
                     <div class="card-header">
                       
-                        <div class="pro_pic" style="background-image: url('images/imagesAdmin/etchiali.jpg');"></div>
+                        <div class="pro_pic" style="background-image: url('images/imagesAdmin/ar05.jpg');"></div>
                         <div class="pro_title"> 
                             
-                          <h1 class="card-fullname">Etchiali Abdelhak</h1>
+                          <h1 class="card-fullname">John Deo </h1>
                           <div class="card-full" class="card-main">
                             <div class="card-section is-active" id="about">
                                 <div class="card-content">
                                     <div class="card-subtitle">PERSONAL INFORMATIONS</div>
                                        
-                          <h6 > First Name : <Font class="fname"  size="2pt" color="black">etchiali</Font></h6>
-                          <h6> Last Name : <Font class="lname" size="2pt" color="black">abdelhak</Font></h6>
-                          <h6> Email : <Font class="mail" size="2pt" color="black">e@gmail.com</Font></h6>
+                          <h6 > First Name : <Font class="fname"  size="2pt" color="black">John</Font></h6>
+                          <h6> Last Name : <Font class="lname" size="2pt" color="black">Deo</Font></h6>
+                          <h6> Email : <Font class="mail" size="2pt" color="black">John@gmail.com</Font></h6>
                           <h6> Gender : <Font class="gen" size="2pt" color="black">male</Font></h6>
-                          <h6> Assigned Role : <Font class="role" size="2pt" color="black">Viewer</Font></h6>
-                          <h6> Fifa Country : <Font class="pays" size="2pt" color="black">Algeria</Font></h6>
-                          <h6> Sport Type : <Font class="tsport" size="2pt" color="black">Football</Font></h6>
+                          <h6> level : <Font class="role" size="2pt" color="black">1</Font></h6>
+                          <h6> Country : <Font class="role" size="2pt" color="black">Algeria</Font></h6>
+                          <h6> Num tel : <Font class="pays" size="2pt" color="black">0674191973</Font></h6>
                           <h6> statut : <Font class="etat" size="2pt" color="black">well</Font></h6>
-                          <h6> Other Role : <Font class="role2" size="2pt" color="black">Var</Font></h6>
-                          <h6> Fifa id : <Font class="id" size="2pt" color="black">302457</Font></h6>
-                          <h6> level : <Font class="niv" size="2pt" color="black">ad</Font></h6>
+                          <h6> Role : <Font class="role2" size="2pt" color="black">Var</Font></h6>
                           
                         </div>
                                
@@ -407,18 +405,18 @@
                                   <button style="display: flex"><img src="images/imagesAdmin/rem.png" style="width: 25px; margin-left:7px" alt=""><h4 style="margin-left: 3px; margin-top:8px">  delete</h4></button></a>
                                 </div>
                                 
-                                @foreach ($Arbitres as $Arbitre)
+                                @foreach ($instricteur_techs as $instricteur_tech)
                                   <div class="list" >
                             
-                            <div class="imgbox" style="background-image: url('images/imagesAdmin/{{$Arbitre['image']}}');" data-title=" {{$Arbitre['nom']}} {{$Arbitre['prenom']}}" nom="{{$Arbitre['nom']}}" prenom="{{$Arbitre['prenom']}}" email="{{$Arbitre['email']}}" genre="{{$Arbitre['genre']}}" role="{{$Arbitre['role']}}" pays="{{$Arbitre['pays']}}" tsport="{{$Arbitre['typeSport']}}" etat="{{$Arbitre['etat']}}" role2="{{$Arbitre['role2']}}" niv="{{$Arbitre['niv']}}" id="{{$Arbitre['id']}}">
+                            <div class="imgbox" style="background-image: url('images/imagesAdmin/{{$instricteur_tech['image']}}');" data-title=" {{$instricteur_tech['nom']}} {{$instricteur_tech['prenom']}}" nom="{{$instricteur_tech['nom']}}" prenom="{{$instricteur_tech['prenom']}}" email="{{$instricteur_tech['email']}}" genre="{{$instricteur_tech['gender']}}" role="{{$instricteur_tech['level']}}" pays="{{$instricteur_tech['country']}}"  etat="{{$instricteur_tech['etat']}}"  niv="{{$instricteur_tech['grade']}}" id="{{$instricteur_tech['id']}}">
                             </div>
                             <h4 class="content">
-                                {{$Arbitre['nom']}} {{$Arbitre['prenom']}}
+                                {{$instricteur_tech['nom']}} {{$instricteur_tech['prenom']}}
                             </h4>
-                            <a href="{{"edit/".$Arbitre['id']}}"><img src="images/imagesAdmin/edit.png" width="30px" height="30px" alt=""></a>
+                            <a href=""><img src="images/imagesAdmin/edit.png" width="30px" height="30px" alt=""></a>
                             {{-- <a href="{{"list/".$Arbitre['id']}}"  class="edit-modal editBtn"><img src="images/imagesAdmin/edit.png" width="30px" height="30px" alt=""></a>  --}}
 
-                            <a onclick="popUp({{$Arbitre['id']}})"  class="pop" value="{{$Arbitre['id']}}"><img src="images/imagesAdmin/bin.png"  width="30px" height="30px" alt=""></a>
+                            <a   class="pop" value=""><img src="images/imagesAdmin/bin.png"  width="30px" height="30px" alt=""></a>
                         </div>
                         @endforeach
                         

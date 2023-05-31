@@ -93,18 +93,42 @@ $datasave = [
 
 
     $design -> save();
-     // Récupérer l'ID de l'arbitre désigné
-     $arbitreId = $req->input('arbi1'); // Modifier en fonction de votre logique
 
+     // Récupérer l'ID de l'arbitre désigné
+$nomArbi1 = $req->input('arbi1'); // Modifier en fonction de votre logique
+$arbitre1 = Arbitre::where('nom', $nomArbi1)->first();
+// Vérifier si l'ID de l'arbitre est valide
+if ($arbitre1) {
+    $arbitre1->notification_envoyee = true;
+    $arbitre1->save();
+}
+     // Récupérer l'ID de l'arbitre désigné
+     $nomArbi2 = $req->input('arbi2'); // Modifier en fonction de votre logique
+     $arbitre2 = Arbitre::where('nom', $nomArbi2)->first();
      // Vérifier si l'ID de l'arbitre est valide
-     if ($arbitreId) {
-         $arbitre = Arbitre::find($arbitreId);
-         
-         // Vérifier si l'arbitre existe
-         if ($arbitre) {
-             $arbitre->notify(new ArbitreDesigneNotification());
-         }
+     if ($arbitre2) {
+         $arbitre2->notification_envoyee = true;
+         $arbitre2->save();
      }
+
+          // Récupérer l'ID de l'arbitre désigné
+$nomArbi3 = $req->input('arbi3'); // Modifier en fonction de votre logique
+$arbitre3 = Arbitre::where('nom', $nomArbi3)->first();
+// Vérifier si l'ID de l'arbitre est valide
+if ($arbitre3) {
+    $arbitre3->notification_envoyee = true;
+    $arbitre3->save();
+}
+
+
+          // Récupérer l'ID de l'arbitre désigné
+          $nomArbi4 = $req->input('arbi4'); // Modifier en fonction de votre logique
+          $arbitre4 = Arbitre::where('nom', $nomArbi4)->first();
+          // Vérifier si l'ID de l'arbitre est valide
+          if ($arbitre4) {
+              $arbitre4->notification_envoyee = true;
+              $arbitre4->save();
+          }
     return view('Admin.calendar',['design'=>$design]);
 }
 }

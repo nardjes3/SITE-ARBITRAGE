@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Document Admin</title>
 
     
 
@@ -64,16 +64,10 @@
               <span class="nav-item2">Reports</span>
             </a>
           </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-comments"></i>
-              <span class="nav-item2">Chat</span>
-
-            </a>
-          </li>
+          
           
           <li>
-            <a href="#" class="logout">
+            <a href="{{URL('/admin/logout')}}" class="logout">
               <i class="fas fa-sign-out-alt"></i>
               <span class="nav-item2">Log out</span>
             </a>
@@ -93,8 +87,8 @@
                         <div class="noti-wrap">
                             
                             <div class="noti__item js-item-menu">
-                                <img style="width: 30px" src= "{{asset('images/imagesAdmin/mail.png')}}">
-                                <span class="quantity">1</span>
+                                <i class="fas fa-file-alt"></i>
+                              <span class="quantity">1</span>
                                 <div class="email-dropdown js-dropdown">
                                     <div class="email__title">
                                         <p>You have 3 New Emails</p>
@@ -132,8 +126,7 @@
                                 </div>
                             </div>
                             <div class="noti__item js-item-menu">
-                                <img style="width: 30px" src= "{{asset('images/imagesAdmin/be.png')}}">
-                                <span class="quantity">3</span>
+                                <i class="fas fa-bell"></i>                                <span class="quantity">3</span>
                                 <div class="notifi-dropdown js-dropdown">
                                     <div class="notifi__title">
                                         <p>You have 3 Notifications</p>
@@ -178,7 +171,7 @@
                                     <img style="border-radius: 50%; border-color: white;" src="{{asset('images/imagesAdmin/sec.jpg')}}" alt="John Doe" />
                                     
                                 </div>
-                                <div class="ss" style="width: 170px;" >
+                                <div class="ss" style="width: 180px;" >
                                 <a style="margin-left: 10px; margin-top:10px " href="#">{{Auth::guard('sec_commission')->user()->name}} {{Auth::guard('sec_commission')->user()->lastName}}</a>
                                 <img style="width: 20px; " src= "{{asset('images/imagesAdmin/down.png')}}">
                             </div>
@@ -196,17 +189,11 @@
                                     </div>
                                     <div class="account-dropdown__body">
                                         <div class="account-dropdown__item">
-                                            <a href="#">
+                                            <a href="profilAdmin">
                                                 <i class="zmdi zmdi-account"></i>Account</a>
                                         </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-settings"></i>Setting</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                        </div>
+                                        
+                                        
                                     </div>
                                     <div class="account-dropdown__footer">
                                         <a href="#">

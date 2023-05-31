@@ -15,9 +15,12 @@ use App\Http\Controllers\DesignController;
 use App\Http\Controllers\PayeController;
 use App\Http\Controllers\ArbitreController;
 use Dompdf\Dompdf;
-use App\Http\Controllers\PDFController;
 use App\Http\Controllers\VideosController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\InsTechController;
+use App\Http\Controllers\InsPhiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +36,11 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+Route::get('/send', function () {
+    return view('Arbitre/sendPdf');
+});
+
+Route::post('envoyer-pdf', [PDFController::class, 'envoyerPDF'])->name('envoyer.pdf');
 
 
 Route::get('/dash', function () {
@@ -75,7 +83,12 @@ Route::post('profilAdmin', [adminController::class, 'update']);
 Route::view('list', 'Admin.list_ar');
 Route::post('list', [RefereController::class, 'addArbi']);
 
+Route::get('listTh', [InsTechController::class, 'show']);
+Route::get('listPh', [InsPhiController::class, 'show']);
+
+
 Route::get('list', [RefereController::class, 'show']);
+
 
 Route::get('edit/{id}', [RefereController::class, 'edit']);
 Route::post('edit', [RefereController::class, 'update']);
@@ -93,6 +106,9 @@ Route::get('ligue2/{id}', [DesignController::class, 'show2']);
 Route::get('payee',[ArbitreController::class, 'show']);
 Route::get('/upStatut/{id}', [ArbitreController::class, 'upStatut']);
 
+Route::get('/save-pdf', 'PDFController@savePDF');
+
+Route::get('/repport',[ArbitreController::class, 'showPdf']);
 /*************************   SABAH ***********************************/
 
 
@@ -274,7 +290,7 @@ Route::get('arbitre/logout', [ArbitreAuthController::class,'logout'])->name('arb
 // Routes for admin authentication
 Route::view('admin/login/view', 'auth/admin_login')->name('admin.login.view');//view route
 Route::post('admin/login', [AdminAuthController::class,'login'])->name('admin.login');
-Route::get('dmin/logout', [AdminAuthController::class,'logout'])->name('admin.logout');
+Route::get('admin/logout', [AdminAuthController::class,'logout'])->name('admin.logout');
 
 // Routes for ins_phi authentication
 Route::view('InsPhi/login/view', 'auth/InsPhi_login')->name('ins_phi.login.view');//view route

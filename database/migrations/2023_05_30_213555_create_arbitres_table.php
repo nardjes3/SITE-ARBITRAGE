@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('niv');
             $table->string('password');
             $table->boolean('notification_envoyee')->default(false);
+            $table->boolean('paye_envoyee')->default(false);
+            $table->boolean('test_envoyee')->default(false);
             $table->timestamps();
         });
     }

@@ -1,46 +1,37 @@
 <?php
 
 namespace App\Http\Controllers;
-use Barryvdh\DomPDF\PDF;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Models\Rep;
-use Illuminate\Support\Facades\Storage;
-
-
-
+use App\Models\PdfFile;
 
 class PDFController extends Controller
 {
-    
- 
-    public function sauvegarderRapport(Request $request)
+    public function envoyerPDF(Request $request)
 {
-    // Validate the incoming request data
-    $validatedData = $request->validate([
-        'contenu_pdf' => 'required', // Adjust the validation rules as needed
+    // Validez les données de la requête
+    $request->validate([
+        'pdf' => 'required',
     ]);
 
-    try {
-        // Retrieve the validated PDF file
+    // Récupérez le fichier PDF envoyé par la requête
+    $pdfFile = $request->file('pdf');
 
-        // Store the PDF file in the specified directory
-        $validatedData = $request->file('pdf')->store('contenu_pdf', 'public');
+    // Obtenez le nom et le prénom de l'arbitre
+    $nom = Auth::guard('arbitre')->user()->nom; // Remplacez par la valeur appropriée
+    $prenom = Auth::guard('arbitre')->user()->prenom; // Remplacez par la valeur appropriée
 
+    // Enregistrez le fichier PDF
+    $path = $pdfFile->store('pdf_files');
 
-        Rep :: create($validatedData);
+    // Enregistrez les détails du PDF dans la base de données
+    $pdf = new PdfFile();
+    $pdf->nom = $nom;
+    $pdf->prenom = $prenom;
+    $pdf->fichier = $path;
+    $pdf->save();
 
-        // Respond with a JSON response or an appropriate redirection
-        return response()->json(['message' => 'Rapport sauvegardé avec succès']);
-    } catch (\Illuminate\Database\QueryException $e) {
-        // Log the error
-        \Log::error($e->getMessage());
-
-        // Display a user-friendly error message or perform any other necessary actions
-        return response()->json(['message' => 'An error occurred during the database query. Please try again later.'], 500);
-    }
+    return redirect()->back()->with('success', 'PDF enregistré avec succès dans la base de données.');
 }
 
-    
-
-        
 }

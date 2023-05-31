@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>repport</title>
+    <title>Repports</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 
     <!-- Fontawesome CDN Link -->
@@ -57,51 +57,27 @@
                     <thead>
                         <tr>
                             
-                            <th> Arbiter <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> DateMatch <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Match <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> DateReport <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Arbiter's Name <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Arbiter's LastName <span class="icon-arrow">&UpArrow;</span></th>
+                            
                             <th> Action <span class="icon-arrow">&UpArrow;</span></th>
                            
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                           
-                            <td> <img src="images/imagesAdmin/validation.png" alt="">ETCHIALI Abdelhak</td>
-                            <td> 17 Dec, 2022 </td>
-                            <td> Algeria </td>
-                            <td> 20 Dec, 2022 </td>
-                            <td>
-                                <img style="cursor: pointer;" src="images/imagesAdmin/vu.png" alt="">
-                                <img style="cursor: pointer;" src="images/imagesAdmin/remove.png" alt="">
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                           
-                            <td> <img src="images/imagesAdmin/validation.png" alt="">Ghorbel Mustapha </td>
-                            <td> 17 Dec, 2022 </td>
-                            <td> Algeria </td>
-                            <td> 20 Dec, 2022 </td>
-                            <td>
-                                <img style="cursor: pointer;" src="images/imagesAdmin/vu.png" alt="">
-                                <img style="cursor: pointer;" src="images/imagesAdmin/remove.png" alt="">
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                           
-                            <td> <img src="images/imagesAdmin/validation.png" alt="">ETCHIALI Abdelhak</td>
-                            <td> 17 Dec, 2022 </td>
-                            <td> Algeria </td>
-                            <td> 20 Dec, 2022 </td>
-                            <td>
-                                <img style="cursor: pointer;" src="images/imagesAdmin/vu.png" alt="">
-                                <img style="cursor: pointer;" src="images/imagesAdmin/remove.png" alt="">
-                            </td>
-                            
-                        </tr>
+                        
+                        @foreach ($pdf_files as $Pdf)
+    <tr>
+        <td>{{$Pdf['nom']}} </td>
+        <td>{{$Pdf['prenom']}}</td>
+        <td>
+            <a href="{{ $Pdf['fichier'] }}" target="_blank">
+                <img style="cursor: pointer;" src="images/imagesAdmin/vu.png" alt="">
+            </a>            <img style="cursor: pointer;" src="images/imagesAdmin/remove.png" alt="">
+        </td>
+    </tr>
+@endforeach
+                        
                     </tbody>
                 </table>
             </section>
@@ -114,8 +90,8 @@
     
    
     <script src="js/AdminJs/payee.js"></script>
-    <script src="js/AdminJs/sidebar.js"></script>
-    <script src="js/AdminJs/sdBar.js"></script>
+    <script src="js/AdminJs/pdf.js"></script>
+
 
  
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

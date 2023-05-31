@@ -34,7 +34,15 @@ class usercontroller extends Controller
         $questions_arr = explode(",",$data->questions);
         $level = $data->niveau;
         $questions = question::whereIn('id', $questions_arr)->get();
+        $arbitre = Arbitre::where('niv', $level)->first();
+
+    if ($arbitre) {
+        $arbitre->test_envoyee = 0; // Mettez la valeur à 0 ou à false si vous souhaitez définir la notification comme non envoyée.
+        $arbitre->save();
+    }
+
         return view('InsTech/quiz',['questions'=>$questions]);
+
     }
     function create_test(Request $req)
     {
@@ -43,7 +51,10 @@ class usercontroller extends Controller
         $test_tech->is_selected = 0;
         $test_tech->questions = implode(",",$req->input("selected_questions"));
         $test_tech->save();
+        $niveau = $test_tech->niveau;
         return response()->json();
+
+        
     }
     function showdata3($id)
     {
@@ -73,6 +84,14 @@ class usercontroller extends Controller
         $videos_arr = explode(",",$data->videos);
         $level = $data->niveau;
         $videos = video::whereIn('id', $videos_arr)->get();
+
+        $arbitre = Arbitre::where('niv', $level)->first();
+
+    if ($arbitre) {
+        $arbitre->test_envoyee = 0; // Mettez la valeur à 0 ou à false si vous souhaitez définir la notification comme non envoyée.
+        $arbitre->save();
+    }
+        
         return view('InsTech/quiz_vid',['videos'=>$videos,'test_id'=>$data->id,'arbitre_id'=>Auth::guard('arbitre')->user()->id]);
     }
 
@@ -84,6 +103,12 @@ class usercontroller extends Controller
         $test_tech_vid->is_selected = 0;
         $test_tech_vid->videos = implode(",",$req->input("selected_videos"));
         $test_tech_vid->save();
+        $arbitres = Arbitre::where('niv', $niveau)->get();
+
+    foreach ($arbitres as $arbitre) {
+        $arbitre->test_envoyee = 1; 
+        $arbitre->save();
+    }
         return response()->json();
     }
     function set_selected_test(Request $req){
@@ -302,6 +327,12 @@ function show_results(Request $req)
             ['niveau','=','Beginners']
         ])
         ->get();
+        $arbitres = Arbitre::where('niv','=','Beginners')->get();
+
+    foreach ($arbitres as $arbitre) {
+        $arbitre->test_envoyee = 1; 
+        $arbitre->save();
+    }
         return view('InsTech.test_mcq_beg',['members'=>$data]);
     }
 
@@ -311,6 +342,12 @@ function show_results(Request $req)
             ['niveau','=','Beginners']
         ])
         ->get();
+        $arbitres = Arbitre::where('niv','=','Beginners')->get();
+
+    foreach ($arbitres as $arbitre) {
+        $arbitre->test_envoyee = 1; 
+        $arbitre->save();
+    }
         return view('InsTech.test_vid',['members'=>$data]);
     }
     function show10()
@@ -319,6 +356,12 @@ function show_results(Request $req)
             ['niveau','=','Advanceds']
         ])
         ->get();
+        $arbitres = Arbitre::where('niv','=','Advanceds')->get();
+
+    foreach ($arbitres as $arbitre) {
+        $arbitre->test_envoyee = 1; 
+        $arbitre->save();
+    }
         return view('InsTech.test_mcq_adv',['members'=>$data]);
     }
     function show13()
@@ -327,6 +370,12 @@ function show_results(Request $req)
             ['niveau','=','Advanceds']
         ])
         ->get();
+        $arbitres = Arbitre::where('niv','=','Advanceds')->get();
+
+        foreach ($arbitres as $arbitre) {
+            $arbitre->test_envoyee = 1; 
+            $arbitre->save();
+        }
         return view('InsTech.test_vid_adv',['members'=>$data]);
     }
     function add_note(Request $req){

@@ -13,5 +13,5 @@ class Arbitre  extends Authenticatable
     use HasFactory;
     public $timestamps = false;
     protected $guard = 'arbitre';
-    protected $fillable = ['email', 'password'];
+    protected $fillable = ['email', 'password', 'notification_envoyee', 'paye_envoyee', 'test_envoyee',];
 }

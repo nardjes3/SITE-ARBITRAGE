@@ -30,3 +30,11 @@ document.getElementById('btnConvert').addEventListener('click', function() {
     html2pdf().from(container).save();
   });
   
+  var pdfImages = document.getElementsByClassName('pdfImage');
+  for (var i = 0; i < pdfImages.length; i++) {
+      pdfImages[i].addEventListener('click', function() {
+          var pdfUrl = this.getAttribute('data-pdf-url');
+          var embedHtml = '<embed src="' + pdfUrl + '#toolbar=0" type="application/pdf" width="100%" height="600px" />';
+          document.getElementById('pdfContainer').innerHTML = embedHtml;
+      });
+  }
